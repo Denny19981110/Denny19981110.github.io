@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .header {
+            height: 50px;
+            position: relative;
+            margin-top: 10px;
+            margin-bottom: 150px;
+        }
+
+        .header .right-nav {
+            position: absolute;
+            right: 0;
+        }
+
+        .header .right-nav a {
+            text-decoration: none;
+            font-size: 20px;
+            margin-right: 20px;
+            color: grey;
+        }
+
+        .item-group {
+            width: 600px;
+            margin: auto;
+
+        }
+
+        .search {
+            width: 600px;
+            border-radius: 200px;
+            border: 1px solid #aaa;
+            display: flex;
+            height: 40px;
+        }
+
+        .search-icon {
+            width: 30px;
+            margin-top: 8px;
+        }
+
+        .search-input input {
+            width: 546px;
+            height: 0px;
+            /* 用padding撐開，把 */
+            padding: 20px 0;
+            border: none;
+            /* 當點擊時不會跑出外框線 */
+            outline: none;
+        }
+
+        .search-input input::placeholder {
+            font-size: 16px;
+            /* 文字垂直居中 */
+            justify-content: center;
+        }
+
+        .google-mic {
+            /* 圖片尺寸是24px */
+            width: 24px;
+        }
+
+        .google-mic img {
+            margin-top: 8px;
+            justify-content: center;
+        }
+
+        .logo img {
+            width: 40%;
+            display: flex;
+            margin: auto;
+        }
+
+        .quick-path {
+            display: flex;
+            margin: 15px auto;
+            width: 300px;
+            height: 100px;
+            /* background-color: #aaa; */
+        }
+        .quick-path .document,
+        .quick-path .app,
+        .quick-path .path{
+            width: 90px;
+            margin: 5px;
+            background-color: rgb(247, 244, 244);
+            border-radius:5%;
+        }
+        /* 不能一起設定，會只有最後一個有效果 */
+        /* 無法對文字起到色彩 */
+        .quick-path .path:hover{
+            background-color: #aaa;
+        }
+        .quick-path .app:hover{
+            background-color: #aaa;
+        }
+        .quick-path .document:hover{
+            background-color: #aaa;
+        }
+        .quick-path .pic,
+        .quick-path .plus{
+            height: 50px;
+            background-color: #ccc;
+            width: 50px;
+            display: flex;
+            margin: auto;
+            margin-top: 5px;
+            border-radius: 25px;
+            /* 為何作用不到新增捷徑的? */
+            /* 因為新增捷徑優先及更高? */
+            /* margin-bottom: 25px; */
+        }
+        .quick-path .pic img{
+            width: 30px;
+            height: 30px;
+            display: flex;
+            margin: auto;
+        }
+        .quick-path .plus.plus-box{
+            font-size: 30px;
+            font-weight: 900;
+            text-decoration: none;
+            display: flex;
+            margin: auto;
+            margin-top: 5px;
+        }
+        .quick-path .content p{
+            margin-top: 7px;
+            color: rgb(70, 66, 66);
+        }
+        .quick-path a{
+            text-decoration: none;
+            text-align: center;
+            font-size: 10px;
+        }
+        .quick-path .path .plus p{
+            display: flex;
+            margin: auto; 
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="right-nav">
+            <a href="#" id="gmail">Gmail</a>
+            <a href="#" id="photo">圖片</a>
+            <a href="#" id="apps"><i class="fa fa-th" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="item-group">
+        <div class="logo">
+            <img src="./pic/Google-Logo.png" alt="">
+        </div>
+        <div class="search">
+            <div class="search-icon">
+                <img src="./pic/search.svg" alt="">
+            </div>
+            <div class="search-input">
+                <input type="text" placeholder="搜尋Google或輸入網址">
+            </div>
+            <div class="google-mic">
+                <a href="#"><img src="./pic/googlemic_clr_24px.svg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="quick-path">
+        <div class="document">
+            <a href="#">
+                <div class="pic">
+                    <img src="./pic/path1.png" alt="">
+                </div>
+                <div class="content">
+                    <p>Document</p>
+                </div>
+            </a>
+        </div>
+        <div class="app">
+            <a href="#">
+                <div class="pic">
+                    <img src="./pic/path2.png" alt="">
+                </div>
+                <div class="content">
+                    <p>線上應用程式</p>
+                </div>
+            </a>
+        </div>
+        <div class="path">
+            <a href="#">
+                <div class="plus plus-box">
+                    <p>+</p>
+                </div>
+                <div class="content">
+                    <p>新增捷徑</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>
