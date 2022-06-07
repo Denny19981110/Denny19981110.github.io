@@ -84,25 +84,20 @@
             height: 100%;
         }
 
-        .header .right-nav .checkMore a {
+        .header .right-nav .checkMore #seemore {
             text-decoration: none;
             font-size: 15px;
             display: flex;
             margin: auto;
             color: red;
         }
-
-        .header .right-nav .checkMore .icon {
-            display: flex;
-            margin: auto;
+        .shopee-svg-icon{
+            background-color:#f00;
+            /* ?? */
+            stroke:#fff;
             width: 20px;
             height: 20px;
-            background-color: red;
             border-radius: 10px;
-        }
-
-        .header .right-nav .checkMore .icon a {
-            color: white;
         }
         .content-body {
             display: flex;
@@ -172,9 +167,11 @@
 
             <div class="right-nav">
                 <div class="checkMore">
-                    <a href="#">查看全部</a>
+                    <a href="#" id="seemore">查看全部<svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" class="shopee-svg-icon icon-arrow-right"><path d="m2.5 11c .1 0 .2 0 .3-.1l6-5c .1-.1.2-.3.2-.4s-.1-.3-.2-.4l-6-5c-.2-.2-.5-.1-.7.1s-.1.5.1.7l5.5 4.6-5.5 4.6c-.2.2-.2.5-.1.7.1.1.3.2.4.2z"></path></svg></a>
                     <div class="icon">
-                        <a href="#">></a>
+                        <a href="#" style="color:#fff;">
+                            
+                        </a>
                     </div>
                 </div>
             </div>
