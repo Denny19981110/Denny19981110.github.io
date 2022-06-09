@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #222;
+        }
+
+        .header {
+            height: 50px;
+        }
+
+        .header .items {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .header .items li {
+            vertical-align: bottom;
+            padding: 15px;
+        }
+
+        .header .items li a {
+            text-decoration: none;
+            font-size: 20px;
+            color: #aaa;
+            line-height: 0;
+            vertical-align: middle;
+        }
+
+        .header .items li a img {
+            height: 20px;
+        }
+
+        .header .items li:nth-last-child(1) {
+            padding-right: 40px;
+        }
+
+        .content-body {
+            width: 600px;
+            margin: auto;
+            margin-top: 200px;
+        }
+
+        .content-body .google-logo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .content-body .google-logo img {
+            width: 60%;
+        }
+
+        .content-body .input-box {
+            display: flex;
+            width: 100%;
+            height: 50px;
+            padding-top: 25px;
+        }
+
+        .content-body .input-box .search-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px 0 0 25px;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .content-body .input-box .search-icon img {
+            width: 60%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            position: absolute;
+        }
+
+        .content-body .input-box input {
+            width: 510px;
+            height: 0;
+            padding: 25px 0;
+            font-size: 20px;
+            border: none;
+        }
+
+        .content-body .input-box input:focus::placeholder {
+            color: transparent;
+        }
+
+        .content-body .input-box input:focus {
+            outline: none;
+        }
+
+        .content-body .input-box .mic-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 0 25px 25px 0;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .content-body .input-box .mic-icon img {
+            width: 60%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            position: absolute;
+        }
+
+        .content-body .bottom-items {
+            display: flex;
+            justify-content: center;
+            height: 100px;
+            margin-top: 20px;
+        }
+        .bottom-items .path{
+            margin: 0 10px;
+            width: 100px;
+            background-color: #222;
+        }
+        .bottom-items .path:hover{
+            background-color:#777;
+        }
+        .bottom-items .path .wrap{
+            width: 50px;
+            height: 50px;
+            background-color: #111;
+            margin: auto;
+            display: flex;
+            border-radius: 50%;
+            position: relative;
+            margin-top: 5px;
+        }
+        .bottom-items .path .wrap img{
+            display: flex;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            width: 70%;
+        }
+        .bottom-items .path .wrap .plus{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            display: flex;
+        }
+        .bottom-items .path a .wrap .plus p{
+            font-size: 50px;
+            line-height: 0;
+            color: #fff;
+            font-weight: bold;
+            margin: auto;
+        }
+        .bottom-items .path a .text{
+            padding-top: 20px;
+        }
+        .bottom-items .path a .text p{
+            text-align: center;
+            font-size: 15px;
+            color: #fff;
+        }
+        #botton{
+            display: flex;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background-color: #111;
+            padding: 5px;    
+            border-radius: 20px;
+            margin: 0 10px 10px 0 ;
+        }
+        #botton p{
+            color: #8ab4f8;
+            font-size: 15px;
+            margin-right: 8px;
+        }
+        #botton img{
+            background-color: var(--text-color--);
+            
+        }
+        .fa-pencil{
+            color: #8ab4f8;
+            /* margin: 0 8px; */
+            display: flex;
+            margin:  auto 8px auto 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <ul class="items">
+            <li>
+                <a href="#">Gmail</a>
+            </li>
+            <li>
+                <a href="#">圖片</a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./pic/9..png" style="stroke:#fff;">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content-body">
+        <div class="google-logo">
+            <img src="./pic/Google_logo_white_2015.png" alt="">
+        </div>
+        <div class="input-box">
+            <div class="search-icon">
+                <img src="./pic/search.svg" alt="">
+            </div>
+            <div class="input"><input type="text" placeholder="搜尋Google或輸入網址"></div>
+            <div class="mic-icon">
+                <img src="./pic/googlemic_clr_24px.svg" alt="">
+            </div>
+        </div>
+        <div class="bottom-items">
+            <div class="path">
+                <a href="#">
+                    <div class="wrap">
+                        <div class="pic"><img src="./pic/path1.png"></div>
+                    </div>
+                    <div class="text">
+                        <p>documment</p>
+                    </div>
+                </a>
+            </div>
+            <div class="path">
+                <a href="#">
+                    <div class="wrap">
+                        <div class="pic"><img src="./pic/path2.png"></div>
+                    </div>
+                    <div class="text">
+                        <p>線上應用程式</p>
+                    </div>
+                </a>
+            </div>
+            <div class="path">
+                <a href="#">
+                    <div class="wrap">
+                        <div class="plus">
+                            <p>+</p>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <p>新增捷徑</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="botton">
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+        <p>自訂 Chrome</p>
+    </a>
+</body>
+
+</html>

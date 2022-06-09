@@ -41,7 +41,6 @@
         .item-group {
             width: 600px;
             margin: auto;
-
         }
 
         .search {
@@ -161,7 +160,32 @@
             margin: auto; 
             color: #fff;
         }
-
+        #botton{
+            display: flex;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background-color: #111;
+            padding: 5px;    
+            border-radius: 20px;
+            margin: 0 10px 10px 0 ;
+            text-decoration: none;
+        }
+        #botton p{
+            color: #8ab4f8;
+            font-size: 15px;
+            margin-right: 8px;
+        }
+        #botton img{
+            /* JS插入文字的顏色給他 */
+            background-color: var(--text-color--);
+        }
+        .fa-pencil{
+            color: #8ab4f8;
+            /* margin: 0 8px; */
+            display: flex;
+            margin:  auto 8px auto 5px;
+        }
     </style>
 </head>
 
@@ -223,6 +247,11 @@
             </a>
         </div>
     </div>
+
+    <a href="#" id="botton">
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+        <p>自訂 Chrome</p>
+    </a>
 
 </body>
 
