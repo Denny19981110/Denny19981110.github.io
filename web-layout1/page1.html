@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .wrap {
+            width: 1024px;
+            margin: auto;
+            padding: 30px 42px 0;
+            box-sizing: border-box;
+        }
+        .header {
+            width: 940px;
+            height: 40px;
+            display: flex;
+            padding: 9px 0;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .header .nav {
+            height: 100%;
+            width: 387px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header .nav a {
+            color: #3F5D45;
+            font: 600 16px/40px PingFang TC;
+        }
+
+        .header .nav img {
+            vertical-align: text-bottom;
+        }
+
+        .header .logo img {
+            height: 100%;
+        }
+
+        .banner {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .banner img {
+            width: 100%;
+        }
+
+        .content-body {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .side-bar {
+            width: 300px;
+
+        }
+        .side-bar p {
+            height: 65px;
+            font: normal normal 600 24px/40px PingFang TC;
+            letter-spacing: 0px;
+            color: #EAF0ED;
+            background-color: #3F5D45;
+            text-align: center;
+            line-height: 65px;
+        }
+        .side-bar li{
+            height: 65px;
+            font: normal normal 600 24px/40px PingFang TC;
+            text-align: center;
+        }
+        .side-bar li a{
+            color: #3F5D45;
+            line-height: 65px;
+        }
+        #all-desert{
+            background-color: #EAF0ED;
+        }
+        .item-group{
+            width:620px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .item-group .item .goods-info{
+            display: flex;
+            height: 56px;
+            box-sizing: border-box;
+            width: 300px;
+            text-align: center;
+            border: 1px solid #EAF0ED;
+            justify-content: space-around;
+            font: 600 20px/24px PingFang TC;
+            color: #3F5D45;
+        }
+        .item-group .item{
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .item-group .item button{
+            position: absolute;
+            border: none;
+            background-color: transparent;
+            width: 24px;
+            top: 16px;
+            right: 20px;
+        }
+        .item-group .item button img{
+            width: 100%;
+        }
+        .item-group .item .promote{
+            position: absolute;
+            margin-left: 20px;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            max-width: 36px;
+            padding: 10.08px 10px 9.24px;
+            background-color: #3F5D45;
+        }
+        .item-group .item .promote p{
+            color: #EAF0ED;
+            text-align: left;
+            font: 600 16px/20px PingFang TC;
+            width: 16px;
+        }
+        .goods-img{
+            height: 315px;
+        }
+        .goods-info .name{
+            width: 173px;
+            height: 56px;
+            padding: 14px;
+            border-right: 1px solid #EAF0ED;
+            box-sizing: border-box;
+
+        }
+        .goods-info .name p{
+            line-height: 28px;
+        }
+        .goods-info .price{
+            padding: 14px;
+            width: 127px;
+            height: 56px;
+            box-sizing: border-box;
+        }
+        .goods-info .price p{
+            line-height: 28px;
+            
+        }
+        .goods-content .add-cart{
+            width: 100%;
+            height: 65px;
+            background-color: #EAF0ED;
+            display: flex;
+        }
+        .goods-content .add-cart a{
+            color:#3F5D45;
+            font: normal normal 600 24px/20px PingFang TC;
+            margin: auto;
+        }
+        .btn-group{
+            width:100%;
+            margin-top: 20px;
+            display:flex;
+            justify-content:flex-end;
+            margin-bottom: 60px;
+        }
+        .btn-group a{
+            width: 60px;
+            height: 60px;
+            font:300 20px/20px PingFang TC;
+            color: #3F5D45;
+            text-align: center;
+            line-height: 60px;
+            border: 1px solid #EAF0ED;
+            box-sizing: border-box;
+        }
+        .btn-group a img{
+            vertical-align:middle;
+        }
+        .btn-group a:nth-child(2){
+            background-color: #3F5D45;
+            border: 1px solid #3F5D45;
+            color: #fff;
+        }
+        .footer{
+            width:1024px;
+            background-color: #EAF0ED;
+        }
+        .footer .subscribe{
+            display: flex;
+            background-color: #3F5D45;
+            height: 116px;
+            width: 1024px;
+        }
+        #logo{
+            width:40px;
+            margin:0 20px 0 122px ;
+        }
+        #logo img{
+            width: 100%;;
+        }
+        .footer .subscribe section{
+            font: normal normal normal 24px/29px Helvetica Neue;
+            color: #EAF0ED;
+            margin: auto 0;
+            /* padding-right: 124px; */
+            width: 216px;
+            height: 33px;
+        }
+        .footer .subscribe .email{
+            width: 380px;
+            height: 56px;
+            margin: auto 0;
+            display: flex;
+            padding-left: 124px;
+        }
+        .footer .subscribe .email .pic{
+            height: 56px;
+            width: 316px;
+            background-color: #EAF0ED;
+            
+        }
+        .footer .subscribe .email .pic img{
+            padding: 16px 272px 16px 20px;
+        }
+        .footer .subscribe .email .send{
+            max-width: 64px;
+            max-height: 56px;
+            background-color: #FFE180;
+            padding: 20px 24px;
+        }
+        .footer .subscribe .email .send img{
+            width: 16px;
+        }
+        .footer .footer-info{
+            display: flex;
+            flex-wrap: wrap;
+            height: 341px;
+        }
+        .footer .footer-info .left-content{
+            width: 227px;
+            margin-left: 122px;
+        }
+        .footer .footer-info .left-content img{
+            margin-top: 38.9px;
+        }
+        .footer .footer-info .left-content .contact{
+            margin-top: 115.5px;
+            width: 100%;
+
+        }
+        .footer .footer-info .left-content .contact p{
+            font: 600 16px/24px Helvetica Neue;
+            color: #3F5D45;
+        }
+        .footer .footer-info .right-content{
+            margin-left: 494px;
+            height: 219px;
+            width: 59px;
+            margin-top: 30px;
+        }
+        .footer .footer-info .right-content p{
+            writing-mode: vertical-rl;
+            font: 600 26px/35px PingFang TC;
+        }
+        .footer .footer-info .copyright{
+            width: 1024px;
+            display: flex;
+        }
+        .footer .footer-info .copyright img{
+            width: 32px;
+            height: 32px;
+            margin: auto 0;
+        }
+        .footer .footer-info .copyright img:nth-child(1){
+            padding-left: 122px;
+            padding-right: 8px;
+        }
+        .footer .footer-info .copyright p{
+            padding-left:450px;
+            font: 600 16px/19px Times;
+            color: #3F5D45;
+            margin: auto 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="logo">
+                <img src="./pic/logo-all-dark.svg" alt="">
+            </div>
+            <div class="nav">
+                <a href="#">首頁</a>
+                <a href="#">甜點</a>
+                <a href="#">登入</a>
+                <a href="#"><img src="./pic/shopping_cart.png" alt=""></a>
+            </div>
+
+        </div>
+        <div class="banner">
+            <img src="./pic/banner.png" alt="">
+        </div>
+        <div class="content-body">
+            <div class="side-bar">
+                <p>甜點類別</p>
+                <ul>
+                    <li id="all-desert">
+                        <a href="#">所有甜點 (48)</a>
+                    </li>
+                    <li>
+                        <a href="#">本日精選 (10)</a>
+                    </li>
+                    <li>
+                        <a href="#">人氣推薦 (26)</a>
+                    </li>
+                    <li>
+                        <a href="#">新品上市 (12)</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="item-group">
+                <div class="item">
+                    <div class="promote">
+                        <p>本日精選</p>
+                    </div>
+                    <button><img src="./pic/favorite_border.png" alt=""></button>
+                    <div class="goods-img">
+                        <img src="./pic/p-1.png" alt="">
+                    </div>
+                    <div class="goods-content">
+                        <div class="goods-info">
+                            <div class="name">
+                                <p id="name">焦糖馬卡龍</p>
+                            </div>
+                            <div class="price">
+                                <p>NT$ 450</p>
+                            </div>
+                        </div>
+                        <div class="add-cart">
+                            <a href="#">加入購物車</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="promote">
+                        <p>本日精選</p>
+                    </div>
+                    <button><img src="./pic/favorite_border.png" alt=""></button>
+                    <div class="goods-img">
+                        <img src="./pic/p-2.png" alt="">
+                    </div>
+                    <div class="goods-content">
+                        <div class="goods-info">
+                            <div class="name">
+                                <p id="name">焦糖馬卡龍</p>
+                            </div>
+                            <div class="price">
+                                <p>NT$ 450</p>
+                            </div>
+                        </div>
+                        <div class="add-cart">
+                            <a href="#">加入購物車</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="promote">
+                        <p>本日精選</p>
+                    </div>
+                    <button><img src="./pic/favorite_border.png" alt=""></button>
+                    <div class="goods-img">
+                        <img src="./pic/p-3.png" alt="">
+                    </div>
+                    <div class="goods-content">
+                        <div class="goods-info">
+                            <div class="name">
+                                <p id="name">焦糖馬卡龍</p>
+                            </div>
+                            <div class="price">
+                                <p>NT$ 450</p>
+                            </div>
+                        </div>
+                        <div class="add-cart">
+                            <a href="#">加入購物車</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="promote">
+                        <p>本日精選</p>
+                    </div>
+                    <button><img src="./pic/favorite_border.png" alt=""></button>
+                    <div class="goods-img">
+                        <img src="./pic/p-4.png" alt="">
+                    </div>
+                    <div class="goods-content">
+                        <div class="goods-info">
+                            <div class="name">
+                                <p id="name">焦糖馬卡龍</p>
+                            </div>
+                            <div class="price">
+                                <p>NT$ 450</p>
+                            </div>
+                        </div>
+                        <div class="add-cart">
+                            <a href="#">加入購物車</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="promote">
+                        <p>本日精選</p>
+                    </div>
+                    <button><img src="./pic/favorite_border.png" alt=""></button>
+                    <div class="goods-img">
+                        <img src="./pic/p-5.png" alt="">
+                    </div>
+                    <div class="goods-content">
+                        <div class="goods-info">
+                            <div class="name">
+                                <p id="name">焦糖馬卡龍</p>
+                            </div>
+                            <div class="price">
+                                <p>NT$ 450</p>
+                            </div>
+                        </div>
+                        <div class="add-cart">
+                            <a href="#">加入購物車</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="promote">
+                        <p>本日精選</p>
+                    </div>
+                    <button><img src="./pic/favorite_border.png" alt=""></button>
+                    <div class="goods-img">
+                        <img src="./pic/p-6.png" alt="">
+                    </div>
+                    <div class="goods-content">
+                        <div class="goods-info">
+                            <div class="name">
+                                <p id="name">焦糖馬卡龍</p>
+                            </div>
+                            <div class="price">
+                                <p>NT$ 450</p>
+                            </div>
+                        </div>
+                        <div class="add-cart">
+                            <a href="#">加入購物車</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <a href="#"><img src="./pic/arrow_left.png" alt=""></a>
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#"><img src="./pic/arrow_right.png" alt=""></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="subscribe">
+                <img id="logo" src="./pic/logo-light.svg" alt="">
+                <section>訂閱你我的甜蜜郵件</section>
+                <div class="email">
+                    <div class="pic"><img src="./pic/mail-24px.png" alt=""></div>
+                    <div class="send"><a href="#"><img src="./pic/arrow_forward-24px.png" alt=""></a></div>
+                </div>
+            </div>
+            <div class="footer-info">
+                <div class="left-content">
+                    <img src="./pic/logotype-lg-dark.svg" alt="">
+
+                    <div class="contact">
+                        <p>07-1234-5678</p>
+                        <p>sweetaste@email.com</p>
+                        <p>800 高雄市新興區幸福路 520 號</p>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <p>今天是個 &#8212;&#8212; <br>&nbsp;&nbsp;吃甜點的好日子 &deg;</p>
+                </div>
+                <div class="copyright">
+                    <img src="./pic/ic-line@.svg" alt="">
+                    <img src="./pic/ic-facebook.svg" alt="">
+                    <p>&copy 2022 byDenny* All Rights Reserved </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+</html>
