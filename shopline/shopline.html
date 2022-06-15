@@ -9,148 +9,52 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/e95c98306e.js" crossorigin="anonymous"></script>
-
-    <style>
-        .wrap {
-            width: 100%;
-        }
-        .info {
-            width: 1240px;
-            margin: auto;
-        }
-        .info .title {
-            width: 100%;
-            text-align: center;
-            line-height :1.5;
-        }
-        .info .title h1{
-            margin:20px 0;
-            font-weight: bold;
-            font-size: 35px;
-        }
-        .info .title p {
-            font-size: 17px;
-            line-height: 1.5;
-        }
-
-        .info-body {
-            width: 100%;
-        }
-
-        .info-body .item {
-            display: flex;
-            margin: 40px 0;
-        }
-
-        .info-body .item:nth-child(n+1):nth-child(-n+3) {
-            border-bottom: 1px solid #ccc;
-        }
-
-        .info-body .item:nth-child(odd) {
-            flex-direction: row-reverse;
-        }
-
-        .info-body .item .item-pic,
-        .info-body .item .item-content {
-            width: 50%;
-        }
-
-        .info-body .item .item-pic img {
-            width: 100%;
-        }
-
-        .info-body .item h3 {
-            font-size: 30px;
-            font-weight: 600;
-            margin-bottom: 40px;
-            line-height: 1.5;
-        }
-
-        .info-body .item .item-content p {
-            margin-bottom: 20px;
-            font-size: 17px;
-            line-height: 2;
-        }
-
-        [class="fa-solid fa-circle-check"] {
-            padding-right: 10px;
-            color: rgb(162, 162, 220);
-        }
-
-        .info-body .item .item-content ul {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .info-body .item .item-content li {
-            display: block;
-            width: 50%;
-            font-size: 16px;
-            padding: 10px 0;
-        }
-
-        .info-body .item .item-content a {
-            text-decoration: none;
-            font-size: 16px;
-            display: inline-block;
-            margin: 30px 0;
-        }
-
-        .more-function {
-            width: 100%;
-            background-color: #F4F5F7;
-            padding-top: 40px;
-        }
-        .more-function h2 {
-            font-size: 30px;
-            font-weight: 900;
-            line-height: 1.5;
-            text-align: center;
-        }
-        .feature-group .more-feature{
-            display: flex;
-            flex-wrap:wrap;
-            width: 1200px;
-
-            margin: auto;
-            justify-content: space-between;
-        }
-        .more-function .feature-group {
-            flex-wrap: wrap;
-            text-align: center;
-            margin: auto;
-        }
-        .more-function .more-feature .feature-pic{
-            width: 30%;
-            padding: 10px;
-            box-sizing: border-box;
-            border-radius: 50%;
-            margin: auto;
-            background-color: #fff;
-            filter: drop-shadow(0px 0px 5px #aaa);
-            margin-bottom: 20px;
-        }
-        .more-function .more-feature .feature-pic img{
-            width: 100%;
-        }
-        .more-feature li{
-            width: 30%;
-            box-sizing: border-box;
-            padding: 20px;
-        }
-        .more-feature .feature-content h4{
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .more-feature .feature-content p {
-            text-align: left;
-        }
-    </style>
+    <link rel="stylesheet" href="shopline.css">
 </head>
 
 <body>
+
     <div class="wrap">
+        <div class="header">
+            <div class="top-nav">
+                <a href="#"><i class="fa-solid fa-globe"></i></a>
+                <a href="#">幫助中心</a>
+                <a href="#">登入網站</a>
+            </div>
+            <div class="feature-group">
+                <div class="logo">
+                    <img src="https://img.shoplineapp.com/media/image_clips/60811bb98a60d74a03808d4d/original.png?1619073977"
+                        alt="">
+                </div>
+                <div class="feature-nav">
+                    <ul>
+                        <li>
+                            <a href="#">開戶服務 <i class="fa-solid fa-angle-down"></i></a>
+                        </li>
+                        <li>
+                            <a href="#">方案費用 <i class="fa-solid fa-angle-down"></i></a>
+                        </li>
+                        <li>
+                            <a href="#">客戶案例 <i class="fa-solid fa-angle-down"></i></a>
+                        </li>
+                        <li>
+                            <a href="#">開店說明會 </a>
+                        </li>
+                        <li>
+                            <a href="#">開店諮詢</a>
+                        </li>
+                        <li>
+                            <a href="#">更多解決方案 <i class="fa-solid fa-angle-down"></i></a>
+                        </li>
+                        <li>
+                            <a href="#">其他資源 <i class="fa-solid fa-angle-down"></i></a>
+                        </li>
+
+                    </ul>
+                    <a href="#" id="free-try-btn">免費試用</a>
+                </div>
+            </div>
+        </div>
         <div class="info">
             <div class="title">
                 <h1>單一平台就能助你<br>在全通路輕鬆開店創業</h1>
@@ -174,7 +78,7 @@
                             <li><i class="fa-solid fa-circle-check"></i>一頁商店</li>
                             <li><i class="fa-solid fa-circle-check"></i>開放 HTML／CSS 編輯</li>
                         </ul>
-                        <a href="#">看看開店密技</a>
+                        <a href="#">看看開店密技<i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="item">
@@ -194,7 +98,7 @@
                             <li><i class="fa-solid fa-circle-check"></i>超商／宅配貨到付款</li>
                             <li><i class="fa-solid fa-circle-check"></i>發票開立與串接</li>
                         </ul>
-                        <a href="#">了解更多金物流</a>
+                        <a href="#">了解更多金物流<i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="item">
@@ -214,7 +118,7 @@
                             <li><i class="fa-solid fa-circle-check"></i>Instagram 購物功能</li>
                             <li><i class="fa-solid fa-circle-check"></i>Facebook／Instagram／LINE 對話式購物</li>
                         </ul>
-                        <a href="#">看更多優惠模組</a>
+                        <a href="#">看更多優惠模組<i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="item">
@@ -235,14 +139,14 @@
                             <li><i class="fa-solid fa-circle-check"></i>串接 Shopee 蝦皮購物庫存</li>
 
                         </ul>
-                        <a href="#">看看開店密技</a>
+                        <a href="#">看看開店密技<i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="more-function">
             <div class="feature-group">
-                <h2>更多功能與服務</h2>
+                <h1>更多功能與服務</h1>
                 <ul class="more-feature">
                     <li>
                         <div class="feature-pic">
@@ -304,7 +208,6 @@
                             <p>致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</p>
                         </div>
                     </li>
-
                 </ul>
             </div>
         </div>

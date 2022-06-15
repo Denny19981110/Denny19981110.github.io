@@ -1,0 +1,236 @@
+*{
+    text-decoration: none;
+}
+.wrap {
+    width: 100%;
+   
+}
+.header{
+    width: 100%;
+    background-color: rgb(0, 20, 45);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+.header .top-nav{
+    padding: 20px 50px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+}
+.header .top-nav a{
+    font-size: 20px;
+    display: inline-block;
+    color: #fff;
+}
+.header .top-nav a:hover{
+    color: #0040dd;
+}
+.header .top-nav a:nth-child(n+1):nth-child(-n+2){
+    margin-right: 40px;
+}
+.header .top-nav a:first-child{
+    padding-right: 30px;
+    border-right: 1px solid #fff;
+}
+.header .feature-group{
+    display: flex;
+    width: 100%;
+    padding: 20px 80px;
+    background-color: #fff;
+}
+.header .feature-group .logo{
+    height: 45px;
+}
+.header .feature-group .logo img{
+    height: 100%;
+}
+.header .feature-group .feature-nav{
+    height: 45px;
+    display: flex;
+    padding: 0 0 0 40px;
+}
+.header .feature-group ul{
+    display: flex;
+    margin: auto;
+}
+.header .feature-group ul li{
+    margin: 0 20px;
+}
+.header .feature-group ul li a{
+    font-size: 20px;
+    color: #777;
+}
+.header .feature-group ul li a:hover{
+    color: #0f67ff;
+}
+.header .feature-group #free-try-btn{
+    margin-left: 10em;
+    background-color: #0747a6;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 100px;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+.info {
+    padding-top: 150px;
+    width: 1240px;
+    margin: auto;
+}
+.info .title {
+    width: 100%;
+    text-align: center;
+    line-height :1.5;
+}
+.info .title h1{
+    margin:20px 0;
+    font-weight: bold;
+    font-size: 35px;
+}
+.info .title p {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.info-body {
+    width: 100%;
+}
+
+.info-body .item {
+    display: flex;
+    margin: 40px 0;
+}
+
+.info-body .item:nth-child(n+1):nth-child(-n+3) {
+    border-bottom: 1px solid #ccc;
+}
+.info-body .item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.info-body .item .item-pic,
+.info-body .item .item-content {
+    width: 50%;
+}
+
+.info-body .item .item-pic img {
+    width: 100%;
+}
+
+.info-body .item h3 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.info-body .item .item-content p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 2;
+}
+
+[class="fa-solid fa-circle-check"] {
+    padding-right: 10px;
+    color: rgb(162, 162, 220);
+}
+
+.info-body .item .item-content ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info-body .item .item-content li {
+    display: block;
+    width: 50%;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.info-body .item .item-content a {
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    margin: 30px 0;
+}
+
+.more-function {
+    width: 100%;
+    background-color: #F4F5F7;
+    padding-top: 40px;
+}
+.more-function h1 {
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.5;
+    text-align: center;
+}
+.feature-group .more-feature{
+    display: flex;
+    flex-wrap:wrap;
+    width: 1200px;
+    margin: auto;
+    justify-content: space-between;
+}
+.more-function .feature-group {
+    flex-wrap: wrap;
+    text-align: center;
+    margin: auto;
+}
+.more-function .more-feature .feature-pic{
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin: auto;
+    background-color: #fff;
+    filter: drop-shadow(0px 0px 5px #aaa);
+    margin-bottom: 20px;
+}
+.more-function .more-feature .feature-pic img{
+    width: 100%;
+}
+.more-feature li{
+    width: 360px;
+    padding: 20px;
+}
+.more-feature .feature-content h4{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.more-feature .feature-content p {
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.item-content a {
+    position: relative;
+    color: #0f67ff;
+}
+
+.item-content a::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #0f67ff;
+    position: absolute;
+    bottom: 47%;
+    right: 0px;
+}
+
+.item-content a i {
+    transition: 0.1s;
+    padding-left: 5px;
+}
+
+.item-content a:hover i {
+    transform: translateX(13px);
+    transition: 0.3s;
+}
