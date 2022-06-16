@@ -55,7 +55,7 @@
     margin: auto;
 }
 .header .feature-group ul li{
-    margin: 0 20px;
+    margin: 0 10px;
 }
 .header .feature-group ul li a{
     font-size: 20px;
@@ -65,7 +65,7 @@
     color: #0f67ff;
 }
 .header .feature-group #free-try-btn{
-    margin-left: 10em;
+    margin-left: 8em;
     background-color: #0747a6;
     color: #fff;
     display: flex;
