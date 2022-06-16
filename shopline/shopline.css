@@ -10,10 +10,12 @@
     position: fixed;
     top: 0;
     z-index: 1;
+    height: 60px;
 }
 .header .top-nav{
     padding: 20px 50px;
     width: 100%;
+    margin: auto;
     box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
@@ -36,7 +38,9 @@
 .header .feature-group{
     display: flex;
     width: 100%;
-    padding: 20px 80px;
+    justify-content: center;
+    /* margin: auto; */
+    padding: 20px 0px;
     background-color: #fff;
 }
 .header .feature-group .logo{
