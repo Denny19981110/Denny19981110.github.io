@@ -378,7 +378,7 @@ nav .social-medias ul li:last-child {
     top: -6em;
 }
 
-.shop-categories ul li span {
+.shop-categories ul li a:nth-child(2) {
     margin-top: 1em;
     display: block;
     color: #000;
@@ -386,8 +386,11 @@ nav .social-medias ul li:last-child {
     position: relative;
     padding-left: 4em;
 }
-
-.shop-categories ul li span::before {
+.shop-categories ul li span:hover{
+    background-color: #faa;
+    transition: .3s;
+}
+.shop-categories ul li a:nth-child(2)::before {
     content: '';
     width: 3.5em;
     height: .1em;
@@ -461,7 +464,10 @@ nav .social-medias ul li:last-child {
     font-size: .5em;
     font-weight: 700;
 }
-
+.flagship-products .flag-content a:hover{
+    background-color: #faa;
+    transition: .3s;
+}
 .accessories {
     width: 100%;
     margin-top: 3em;
@@ -713,7 +719,10 @@ nav .social-medias ul li:last-child {
     padding: 1em 0;
     margin: auto;
 }
-
+.daily-wearing-content a:hover{
+    background-color: #faa;
+    transition: .5s;
+}
 .blog {
     width: 70%;
     margin: auto;
@@ -818,7 +827,11 @@ a {
     color: white;
     background-color: #000;
 }
-
+.input-email .input-email-group button:hover{
+    background-color: #faa;
+    transition: 1s;
+    border: none;
+}
 h4#ins {
     margin: 3em 0;
     font-size: 1.5em;
