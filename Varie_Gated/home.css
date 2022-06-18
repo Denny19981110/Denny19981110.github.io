@@ -921,6 +921,39 @@ h4#ins {
 #go-top:hover{
     color: #faa;
 }
+.ad{
+    width: 600px;
+    height: 600px;
+    background-color: #ccc;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.ad label{
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+#close_ad{
+    display: none;
+}
+#close_ad:checked + .ad{
+    display: none;
+}
 @media screen and ( max-width: 1024px) and (min-width:600px){
     .header {
         width: 100%;
