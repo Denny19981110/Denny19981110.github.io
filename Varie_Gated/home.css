@@ -385,9 +385,10 @@ nav .social-medias ul li:last-child {
     font-weight: 600;
     position: relative;
     padding-left: 4em;
+    display: inline-block;
 }
-.shop-categories ul li span:hover{
-    background-color: #faa;
+.shop-categories ul li a:hover{
+    color: #faa;
     transition: .3s;
 }
 .shop-categories ul li a:nth-child(2)::before {
