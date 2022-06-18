@@ -518,6 +518,9 @@ nav .social-medias ul li:last-child {
     margin: 0 auto;
     transform: 1s;
 }
+.accessories ul li a h2:hover{
+    margin-top:-2px;
+}
 .accessories ul li img {
     width: 100%;
     display: flex;
