@@ -165,36 +165,29 @@ nav .nav-bar {
     justify-content: center;
     box-sizing: border-box;
 }
-
 nav .nav-bar li {
     padding: 1em 2em;
 }
-
 nav .nav-bar li a {
     font-weight: bold;
     font-family: sans-serif;
     color: #000;
 }
-
 nav .nav-bar :first-child a {
     color: #faa;
 }
-
 nav .nav-bar a:hover {
     color: #faa;
 }
-
 nav .social-medias {
     flex-grow: 3;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
-
 nav .social-medias ul {
     display: flex;
 }
-
 nav .social-medias ul li {
     padding: .5em 1em;
 }
@@ -211,7 +204,81 @@ nav .social-medias ul a:hover i {
 nav .social-medias ul li:last-child {
     padding: .5em 0 .5em .5em;
 }
-
+/* ----------------------- */
+.nav-bar li:nth-of-type(3),
+        .nav-bar li:nth-of-type(4),
+        .nav-bar li:nth-of-type(5){
+            position: relative;
+        }
+        .nav-bar-feature-groups ul li,
+        .nav-bar-blog-groups ul li,
+        .nav-bar-shop-groups ul li
+        {
+            padding: 10px 30px;
+        }
+        .nav-bar-feature-groups ul li a,
+        .nav-bar-blog-groups ul li a,
+        .nav-bar-shop-groups ul li a{
+            color: #777;
+        }
+        .nav-bar-feature-groups ul li h3,
+        .nav-bar-blog-groups ul li h3{
+            font-weight: 700;
+            cursor: default;
+        }
+        nav .nav-bar li:nth-child(3) .nav-bar-feature-groups,
+        nav .nav-bar li:nth-child(4) .nav-bar-blog-groups,
+        nav .nav-bar li:nth-child(5) .nav-bar-shop-groups{
+            display: none;
+        }
+        nav .nav-bar li:nth-child(3):hover .nav-bar-feature-groups{
+            display: block;
+            position: absolute;
+            left: -400px;
+            top: 50px;
+            z-index: 1;
+            font-family: sans-serif;
+            width: 1200px;
+            padding: 10px;
+            font-weight: normal;
+            display: flex;
+            justify-content: space-around;
+            background-color: #fff;
+        }
+        nav .nav-bar li:nth-child(4):hover .nav-bar-blog-groups{
+            display: none;
+        }
+        nav .nav-bar li:nth-child(4):hover .nav-bar-blog-groups{
+            display: block;
+            position: absolute;
+            left: -550px;
+            top: 50px;
+            z-index: 1;
+            font-family: sans-serif;
+            width: 1200px;
+            font-weight: normal;
+            display: flex;
+            justify-content: space-around;
+            background-color: #fff;
+        }
+        .nav-bar-blog-groups ul li h3:hover{
+            color: black;
+        }
+        nav .nav-bar li:nth-child(5):hover .nav-bar-shop-groups{
+            display: block;
+            position: absolute;
+            left: 0px;
+            top: 50px;
+            z-index: 1;
+            font-family: sans-serif;
+            width: 300px;
+            padding: 10px;
+            font-weight: normal;
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+        }
+/* ----------------------- */
 .banner {
     width: 100%;
     padding: 0 15%;
@@ -944,6 +1011,30 @@ h4#ins {
     left: 0;
     right: 0;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+.ad span{
+    font-size: 15em;
+    color: #f00;
+    filter: drop-shadow(15px 15px 10px rgb(170, 116, 116));
+    animation: transform 2s ease-in forwards infinite alternate;
+}
+@keyframes transform{
+    0%{
+        transform: translateX(0);
+    }
+    33%{
+        transform: translateX(10%);
+    }
+    66%{
+        transform:  translateX(25%);
+    }
+    100%{
+        transform:  translateX(-25%);
+    }
 }
 .ad label{
     position: absolute;
