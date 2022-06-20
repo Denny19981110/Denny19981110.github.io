@@ -1020,22 +1020,9 @@ h4#ins {
     font-size: 15em;
     color: #f00;
     filter: drop-shadow(15px 15px 10px rgb(170, 116, 116));
-    animation: transform 2s ease-in forwards infinite alternate;
+    
 }
-@keyframes transform{
-    0%{
-        transform: translateX(0);
-    }
-    33%{
-        transform: translateX(10%);
-    }
-    66%{
-        transform:  translateX(25%);
-    }
-    100%{
-        transform:  translateX(-25%);
-    }
-}
+
 .ad label{
     position: absolute;
     top: -20px;
