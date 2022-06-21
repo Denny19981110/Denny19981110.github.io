@@ -64,7 +64,7 @@
 .info-content span{
     font-size: 16px;
     color: #bb0404;
-    font-weight: 600;
+    font-weight: 900;
 }
 .info-content span::after{
     content: '';
