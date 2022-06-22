@@ -86,7 +86,6 @@
         let mail = document.querySelector(".info :nth-child(2)");
         let school = document.querySelector(".info :nth-child(3)");
         let habbits = document.querySelector(".info :nth-child(4)");
-        // let dailyPic = document.querySelector("daily-img");
 
         myPic.src = my_picUrl;
         myPic.setAttribute("src", my_picUrl);
@@ -94,14 +93,7 @@
         name.innerHTML = `姓名 : ${person.my_name}<br>`;
         mail.innerHTML = `Email : ${person.email}`;
         school.innerHTML = `學校 : ${person.school}`;
-        // person.habbits.forEach((things,index)=>{
-        //     habbits.innerText = `興趣 : ${things}`;
-        //     habbits.write(`${things}`);
-        // });
-        // habbits.innerText = `興趣 : ${person.habbits.forEach((items)=>{
-        //     `${items}`
-        // })}`;
-        // habbits.innerText = `興趣 : ${person.habbits[2]}`;
+
         habbits.innerText = `興趣 : ${person.habbits}`;
         
         daily_pic.forEach((url,index)=>{
