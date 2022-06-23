@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 70%;
+            margin: auto;
+            padding: 1%;
+            box-sizing: border-box;
+            border: 10px solid #0fa;
+            border-radius: 50px;
+        }
+        .my-pic{
+            width: 100%;
+            padding: 20px;
+            border: 10px solid #0f0;
+            border-radius: 30px;
+            box-sizing: border-box;
+        }
+        .my-pic img{
+            width: 100%;
+            box-shadow: 10px 10px 5px #000;
+        }
+        .info{
+            padding: 0 20px;
+        }
+        .daily-img{
+            display: flex;
+            padding: 20px;
+            box-sizing: border-box;
+            justify-content: space-between;
+        }
+        .daily-img img{
+            width: 30%;
+            box-shadow: 10px 10px 5px #000;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="my-pic">
+            <img src="" id="img1">
+        </div>
+        <div class="info">
+            <h1></h1>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+        </div>
+        <div class="daily-img">
+            <img src="" >
+            <img src="" >
+            <img src="" >
+        </div>
+    </div>
+
+    <script>
+        let person = {
+            my_name : "劉秀敏",
+            email : "jjaltoonC8@gmail.com",
+            school : "洛城大學",
+            habbits : [
+                " 打LOL",
+                " 看jjaltoon",
+                " 玩禽獸朋友M",
+                " 睡覺"
+            ]
+        }
+
+        const my_picUrl = "./pic/maxres5.jpg"
+        let daily_pic = [
+            "./pic/maxres1.jpg",
+            "./pic/maxres2.jpg",
+            "./pic/maxres3.jpg",
+        ]
+        // 抓節點
+        let myPic = document.getElementById("img1");
+        let name = document.querySelector("h1");
+        let mail = document.querySelector(".info :nth-child(2)");
+        let school = document.querySelector(".info :nth-child(3)");
+        let habbits = document.querySelector(".info :nth-child(4)");
+
+        myPic.src = my_picUrl;
+        myPic.setAttribute("src", my_picUrl);
+
+        name.innerHTML = `姓名 : ${person.my_name}<br>`;
+        mail.innerHTML = `Email : ${person.email}`;
+        school.innerHTML = `學校 : ${person.school}`;
+
+        habbits.innerText = `興趣 : ${person.habbits}`;
+        
+        daily_pic.forEach((url,index)=>{
+            let dailyPic = document.querySelector(`.daily-img img:nth-of-type(${index + 1})`);
+            dailyPic.src = `${url}`;
+        });
+    </script>
+</body>
+
+</html>
