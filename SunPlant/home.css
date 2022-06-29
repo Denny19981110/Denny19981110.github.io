@@ -689,7 +689,6 @@ header {
     width: 100%;
     box-sizing: border-box;
     padding: 5%;
-    height: 100%;
 }
 
 .loginUI .user-pic {
@@ -733,7 +732,6 @@ a.send-password {
     color: #000;
     padding: 15px 0;
     width: 100%;
-    margin-top: 50px;
     box-sizing: border-box;
 }
 
