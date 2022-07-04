@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/e95c98306e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <!-- 陰影開關 -->
+    <input type="checkbox" id="close-switch">
+    <label class="shadow-box" for="close-switch"></label>
+    <header>
+        <!-- 漢堡選單 -->
+        <div class="hb">
+            <label for="close-switch"><i class="fa-solid fa-bars-staggered"></i></label>
+        </div>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="#"><img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/logo.png?v=1585540695"
+                    alt="logo-img"></a>
+        </div>
+        <!-- 選單 -->
+        <nav>
+            <!-- 側邊選單控制 -->
+            <input type="radio" id="menu-switch" name="chooseone" checked>
+            <input type="radio" id="user-switch" name="chooseone">
+            <ul class="navbar">
+                <!-- 選單控制區 -->
+                <div class="sidebar-btn">
+                    <div class="menu-btn col-6">
+                        <label for="menu-switch"><i class="fa-solid fa-bars-staggered"></i>&ensp;MENU</label>
+                    </div>
+                    <div class="user-btn col-6">
+                        <label for="user-switch"><i class="fa-regular fa-circle-user"></i>&ensp;LOGIN</label>
+                    </div>
+                </div>
+                <!-- 登入介面 -->
+                <div class="loginUI">
+                    <form>
+                        <div class="user-pic">
+                            <i class="fa-regular fa-circle-user"></i>
+                        </div>
+                        <div class="inputMail">
+                            <input type="email" class="email" placeholder="Email adress">
+                        </div>
+                        <div class="inputPassword">
+                            <input type="password" class="password" placeholder="Password">
+                        </div>
+                        <a class="send-password" href="#">Forgot your password?</a>
+                        <button type="submit">LOG IN</button>
+                    </form>
+                    <span>OR</span>
+                    <a href="#" class="register">Register now &ensp;<i class="fa-solid fa-angle-right"></i></a>
+                </div>
+                <!-- 選單 -->
+                <li>
+                    <a href="#">
+                        <span>Homes</span>
+                        <label for="open_home-group" class="open_home-group">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </label>
+                    </a>
+                    <input type="checkbox" id="open_home-group">
+                    <ul class="home-group">
+                        <div class="row">
+                            <li class="col-12 col-xl-4">
+                                <a href="#"><img
+                                        src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/1.jpg?v=1585564604"
+                                        alt="home1">
+                                </a>
+                                <span class="col-12"><a href="#">HOME1</a></span>
+                            </li>
+                            <li class="col-12 col-xl-4">
+                                <a href="#"><img
+                                        src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/2.jpg?v=1585564605"
+                                        alt="home2">
+                                </a>
+                                <span><a href="#">HOME2</a></span>
+                            </li>
+                            <li class="col-12 col-xl-4">
+                                <a href="#"><img
+                                        src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/3.jpg?v=1585564605"
+                                        alt="home3">
+                                </a>
+                                <span><a href="#">HOME3</a></span>
+                            </li>
+                            <li class="col-12 col-xl-4">
+                                <a href="#"><img
+                                        src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/4.jpg?v=1585564605"
+                                        alt="home4">
+                                </a>
+                                <span><a href="#">HOME4</a></span>
+                            </li>
+                            <li class="col-12 col-xl-4">
+                                <a href="#"><img
+                                        src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/5.jpg?v=1585564605"
+                                        alt="home5">
+                                </a>
+                                <span><a href="#">HOME5</a></span>
+                            </li>
+                    </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Shop</span>
+                        <label for="open_shop-group">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </label>
+                    </a>
+                    <input type="checkbox" id="open_shop-group">
+                    <div class="shop-group">
+                        <div class="row">
+                            <div class="col-12 col-xl-6">
+                                <h3><a href="#">SHOP FILTER</a></h3>
+                                <ul class="shop-group_shop-filter-group row">
+                                    <li>
+                                        <a href="#">Filter Push Left</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Filter Colappse</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-xl-6">
+                                <h3><a href="#">SHOP LAYOUT</a></h3>
+                                <ul class="shop-group_shop-layout-group">
+                                    <li>
+                                        <a href="#">Full width</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sidebar left</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sidebar right</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Infinity Scroll</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Product list</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Featured</span>
+                        <label for="open_featured-group"><i class="fa-solid fa-angle-right"></i>
+                        </label>
+                    </a>
+                    <input type="checkbox" id="open_featured-group">
+                    <div class="featured-group">
+                        <div class="row">
+                            <div class="col-12 col-xl-3">
+                                <h3><a href="#">blog layouts</a></h3>
+                                <ul class="featured-group_blog-layouts-group">
+                                    <li>
+                                        <a href="#">Blog Standar NO Sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Blog Standar Sidebar Left</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Blog Standar Sidebar Right</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Blog Grid No Sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Blog Grid Sidebar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-xl-3">
+                                <h3><a href="#">product layout</a></h3>
+                                <ul class="featured-group_product-layout-group">
+                                    <li>
+                                        <a href="#">Product Large Images</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Product Extended</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Product Gallery</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Product Sticky</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Product Sidebar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-xl-3">
+                                <h3><a href="#">product types</a></h3>
+                                <ul class="featured-group_product-type-group">
+                                    <li>
+                                        <a href="#">Variable</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Video</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">360 Degree</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Affiliate</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Simple</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Out Of Stock</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-xl-3">
+                                <h3><a href="#">single post</a></h3>
+                                <ul class="featured-group_single-post-group">
+                                    <li>
+                                        <a href="#">Single Post NO Sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Single Post Sidebar Right</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Single Post Sidebar Left</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-xl-3">
+                                <a href="#"><img
+                                        src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/banner-menu.jpg?v=1585292268"></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Pages</span>
+                        <label for="open_shop-contacts"><i class="fa-solid fa-angle-right"></i></label>
+                    </a>
+                    <input type="checkbox" id="open_shop-contacts">
+                    <ul class="shop-contacts">
+                        <li>
+                            <a href="#">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Wishlist</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Element</span> 
+                        <label for="open_element-group"><i class="fa-solid fa-angle-right"></i>
+                        </label>
+                    </a>
+                    <input type="checkbox" id="open_element-group">
+                    <div class="element-group">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <h3><a href="#">main style</a></h3>
+                                <ul class="element-group_main-style-group">
+                                    <li><a href="#">No Sidebar</a></li>
+                                    <li><a href="#">Default-Menu right</a></li>
+                                    <li><a href="#">Minimal</a></li>
+                                    <li><a href="#">Classsic</a></li>
+                                    <li><a href="#">Mordern</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xl-6">
+                                <h3><a href="#">post format</a></h3>
+                                <ul class="element-group_post-format-group">
+                                    <li><a href="#">Elementor</a></li>
+                                    <li><a href="#">Logo on menu</a></li>
+                                    <li><a href="#">Default-Menu left</a></li>
+                                    <li><a href="#">Logo in menu</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- 側邊選單控制鍵 -->
+                <label class="close-label" for="close-switch">X close</label>
+            </ul>
+        </nav>
+        <!-- 選單小按鈕 -->
+        <div class="user-btns">
+            <button type="button"><i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button type="button"><i class="fa-regular fa-circle-user"></i>
+            </button>
+            <button type="button"><i class="fa-solid fa-bag-shopping"></i>
+            <span>0</span>
+            </button>
+        </div>
+    </header>
+    <!-- banner -->
+    <div class="banner">
+        <div class="promote">
+            <h2>Collection New <br> Beautiful</h2>
+            <span>from $69</span>
+            <a href="#">SHOP NOW</a>
+        </div>
+        <div class="banner-pic">
+            <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/slidesho10-small-2.png?v=1585303730"
+                alt="">
+        </div>
+    </div>
+    <!-- 介紹 -->
+    <div class="introduce">
+        <div class="title">
+            <h1>
+                The important benefits of<br> greenery for the environment and health
+            </h1>
+            <p>
+                Trees have always been considered as "lungs" of the earth. Planting lots of trees helps provide a great
+                deal of oxygen for us to breathe.
+                On average, one tree can provide enough oxygen for four people. At the same time they also absorb C02,
+                ammonia, S02, .. in the world!
+            </p>
+        </div>
+        <div class="intro-content">
+            <div class="row">
+                <div class="left-content col-12 col-md-6 col-lg-4">
+                    <section>
+                        <h2>Reducing environmental pollution</h2>
+                        <p>Trees have always been considered as "lungs" of the earth.</p>
+                    </section>
+                    <section>
+                        <h2>Save water and reduce soil erosion</h2>
+                        <p>Trees can slow down the evaporation of water, increasing air humidity.</p>
+                    </section>
+                    <section>
+                        <h2>Reduce street temperatures</h2>
+                        <p>Planting more trees in densely populated areas will not only make the air there more fresh
+                        </p>
+                    </section>
+                </div>
+                <div class="right-content col-12 col-md-6 col-lg-4">
+                    <section>
+                        <h2>Energy conservation</h2>
+                        <p>One tree can cool down, cool down 10 rooms</p>
+                    </section>
+                    <section>
+                        <h2>Prevent ultraviolet influence</h2>
+                        <p>Prevent ultraviolet influence</p>
+                    </section>
+                    <section>
+                        <h2>Improve human health</h2>
+                        <p>Living in a quiet, cool, clean and fresh environment will make your health better</p>
+                    </section>
+                </div>
+                <div class="intro-pic col-12 col-md-l2 col-lg-4">
+                    <a href="#">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/info-v2.jpg?v=1585303814"
+                            alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 商品區 -->
+    <div class="goods">
+        <div class="goods-title">
+            <h2>Staff.Pick</h2>
+        </div>
+        <ul>
+            <div class="row">
+                <li class="col-6 col-md-4">
+                    <a href="#">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/186-large_default.jpg?v=1585273742"
+                            alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/187-large_default.jpg?v=1585273742"
+                            alt="">
+                        <div class="box-shadow">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </a>
+                    <h3><a href="#">Sapien Libero</a></h3>
+                    <span>$150.00</span>
+                </li>
+                <li class="col-6 col-md-4">
+                    <a href="#">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/5.jpg?v=1585534433" alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/6.jpg?v=1585534424" alt="">
+                        <div class="box-shadow">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </a>
+                    <h3><a href="#">Fringilla Augue 360</a></h3>
+                    <span>$200.00</span><span>$150.00</span>
+                </li>
+                <li class="col-6 col-md-4">
+                    <a href="#">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/198-large_default_3b2e9138-0286-48ee-983f-c8fb82a3a443.jpg?v=1585273709"
+                            alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/191-large_default_bdf68ca7-5284-412c-9fec-78235d9cd046.jpg?v=1585273709"
+                            alt="">
+                        <div class="box-shadow">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </a>
+                    <h3><a href="#">Faded Short Sleeves Variable</a></h3>
+                    <span>$200.00</span><span>$150.00</span>
+                </li>
+                <li class="col-6 col-md-4">
+                    <a href="#">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/155-large_default.jpg?v=1585273757"
+                            alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/157-large_default.jpg?v=1585273757"
+                            alt="">
+                        <div class="box-shadow">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </a>
+                    <h3><a href="#">Purple Flowers</a></h3>
+                    <span>$180.00</span>
+                </li>
+                <li class="col-6 col-md-4">
+                    <a href="#">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/1.jpg?v=1585533927" alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/3.jpg?v=1585533927" alt="">
+                        <div class="box-shadow">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </a>
+                    <h3><a href="#">Adipiscing Cursus Out Of Stock</a></h3>
+                    <span>$450.00</span>
+                </li>
+                <li class="col-6 col-md-4">
+                    <a href="#">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/203-large_default.jpg?v=1585273720"
+                            alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/215-large_default.jpg?v=1585273720"
+                            alt="">
+                        <div class="box-shadow">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </a>
+                    <h3><a href="#">Fringilla Augue</a></h3>
+                    <span>$320.00</span>
+                </li>
+                <li class="col-6 col-md-4">
+                    <a href="#">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/160-large_default.jpg?v=1585273753"
+                            alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/163-large_default.jpg?v=1585273753"
+                            alt="">
+                        <div class="box-shadow">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </a>
+                    <h3><a href="#">Plant</a></h3>
+                    <span>$200.00</span><span>$150.00</span>
+                </li>
+                <li class="col-6 col-md-4">
+                    <a href="#">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/167-large_default.jpg?v=1585273748"
+                            alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/169-large_default.jpg?v=1585273748"
+                            alt="">
+                        <div class="box-shadow">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </a>
+                    <h3><a href="#">Purple Flowers</a></h3>
+                    <span>$200.00</span><span>$150.00</span>
+                </li>
+                <li class="col-6 col-md-4">
+                    <a href="#">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/169-large_default.jpg?v=1585273748"
+                            alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/172-large_default.jpg?v=1585273745"
+                            alt="">
+                        <div class="box-shadow">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </a>
+                    <h3><a href="#">Plant Beautiful</a></h3>
+                    <span>$150.00</span>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <!-- 影片介紹區 -->
+    <div class="intro-video-area">
+        <div class="row">
+            <div class="intro-video-content col-12 col-md-6">
+                <h2>A Number Of Our Products</h2>
+                <p>Pick up all you need to keep your board in optimum condition with Decathlon’s set of surfboard
+                    accessories.</p>
+                <a href="#">SHOP NOW</a>
+            </div>
+            <div class="video col-12 col-md-6">
+                <a href="https://www.youtube.com/watch?v=nkhpGC10OVw" target="_blank">
+                    <!-- <iframe width="678" height="495" src="https://www.youtube.com/embed/nkhpGC10OVw" title="World's best surfing 2017" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                    <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/video1.jpg?v=1585303728" alt="">
+                    <span><i class="fa-regular fa-circle-play"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- IG區 -->
+    <div class="instagram-area">
+        <div class="ins-title">
+            <span><i class="fa-brands fa-instagram"></i></span>
+            <h2>SHOP INSTAGRAM</h2>
+        </div>
+        <div class="ins-pic">
+            <div class="row">
+                <a href="#" class="col-6 col-md-4 col-lg-3">
+                    <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/instagram8.jpg?v=5033815891171908276"
+                        alt="">
+                    <div class="ins-pic-box-shadow"></div>
+                </a>
+                <a href="#" class="col-6 col-md-4 col-lg-3">
+                    <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/instagram6.jpg?v=16508626721339012980"
+                        alt="">
+                    <div class="ins-pic-box-shadow"></div>
+                </a>
+                <a href="#" class="col-6 col-md-4 col-lg-3">
+                    <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/instagram2.jpg?v=11953683771741515241"
+                        alt="">
+                    <div class="ins-pic-box-shadow"></div>
+                </a>
+                <a href="#" class="col-6 col-md-4 col-lg-3">
+                    <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/instagram1.jpg?v=6541840606778977924"
+                        alt="">
+                    <div class="ins-pic-box-shadow"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer>
+        <h2><a href="#"><img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/logo.png?v=1585540695"
+                    alt=""></a></h2>
+        <div class="contact-group">
+            <a href="#">ABOUT US</a>
+            <a href="#">CUSTOMER SERVICE</a>
+            <a href="#">CUSTOMER SERVICE</a>
+        </div>
+        <!-- 社群媒體連結 -->
+        <div class="media-links">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-solid fa-basketball"></i></a>
+            <a href="#"><i class="fa-brands fa-behance"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <!-- copyright -->
+        <div class="copy">
+            Website by ShopiLaunch . Copyright SunplantShop
+        </div>
+    </footer>
+</body>
+
+</html>
