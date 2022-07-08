@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+        .container{
+            max-width: 500px;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            /* background-image: url("https://source.unsplash.com/1600x1200?universe"); */
+            background-image: url("https://images.unsplash.com/photo-1604423203943-54721eff418a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1200&ixid=MnwxfDB8MXxyYW5kb218MHx8dW5pdmVyc2V8fHx8fHwxNjU3Mjk3OTg0&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600");
+            background-repeat: no-repeat;
+            background-size: 100%
+        }
+        
+    </style>
+  </head>
+  <body >
+    <div class="container border-2 w-100 m-auto border border-dark p-5 bg-light">
+        <div class="guess_nums w-100 p-5  mx-auto text-center fs-1 border">
+            <span class="min">0</span>
+            <span>~</span>
+            <span class="max">100</span>
+        </div>
+        <button class="btn btn-primary w-50 d-block text-center mx-auto getNum">產生數字</button>
+        <input type="text" class="w-50  mx-auto d-block inputNum">
+        <div class="row mx-auto justify-content-center w-100 p-5 pt-0">
+            <button class="col-4 btn btn-dark g-2  fs-4 fw-bold text-light">1</button>
+            <button class="col-4 btn btn-dark g-2  fs-4 fw-bold text-light">2</button>
+            <button class="col-4 btn btn-dark g-2  fs-4 fw-bold text-light">3</button>
+            <button class="col-4 btn btn-dark g-2  fs-4 fw-bold text-light">4</button>
+            <button class="col-4 btn btn-dark g-2  fs-4 fw-bold text-light">5</button>
+            <button class="col-4 btn btn-dark g-2  fs-4 fw-bold text-light">6</button>
+            <button class="col-4 btn btn-dark g-2  fs-4 fw-bold text-light">7</button>
+            <button class="col-4 btn btn-dark g-2  fs-4 fw-bold text-light">8</button>
+            <button class="col-4 btn btn-dark g-2  fs-4 fw-bold text-light">9</button>
+            <button class="col-4 btn btn-dark g-2  fs-4 fw-bold text-danger clearNum notSelect">X</button>
+            <button class="col-4 btn btn-dark g-2  fs-4 fw-bold text-light">0</button>
+            <button class="col-4 btn btn-dark g-2  fs-4 fw-bold text-success submitNum notSelect">V</button>
+        </div>
+    </div>
+
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script>
+        let finalAnswer,answer,inputNum
+        const min = document.querySelector('.min')
+        const max = document.querySelector('.max')
+        const clearNum = document.querySelector('.clearNum')
+        const submitNum = document.querySelector('.submitNum')
+        const getNum = document.querySelector('.getNum')
+        let buttons = document.querySelectorAll('.row button:not(.notSelect)')
+        let lockbtns = document.querySelectorAll('.row button')
+        inputNum = document.querySelector('.inputNum')
+
+
+        lockbtn()
+
+        getNum.addEventListener('click', function(event){
+            getRandomNum()
+            unlockbtn()
+            getNum.setAttribute('disabled','disabled')
+        })
+        buttons.forEach(button =>{
+            button.addEventListener('click', function(event){
+                inputNum.value += button.textContent
+                answer = Number(inputNum.value)
+            }) 
+        })
+        
+        submitNum.addEventListener('click',function(event){
+            checkAnswer(answer,finalAnswer)
+            removeInput()
+
+        }) 
+        clearNum.addEventListener('click',function(event){
+            removeInput()
+        }) 
+
+
+        // 隨機數
+        function getRandomNum() {
+            finalAnswer = Math.floor((Math.random()*99) + 1);
+        }
+        // 檢查答案
+        function checkAnswer(answer,finalAnswer){
+            if(answer > finalAnswer && answer < Number(max.innerText)) {
+                console.log(max)
+                max.innerText = answer
+
+            }
+            else if(answer < finalAnswer && answer > Number(min.innerText)) {
+                console.log(min)
+                min.innerText = answer
+            }
+            else if(answer == finalAnswer) {
+                alert('win')
+                location.reload()
+            }
+            else{
+                alert('請輸入範圍內的數字')
+            }
+        }
+        //移除input值
+        function removeInput(){
+            inputNum.value = ''
+        }
+        //鎖住按鈕
+        function lockbtn(){
+            lockbtns.forEach(btn => {
+                btn.setAttribute('disabled', 'disabled')
+            })
+        }
+        // 解鎖按鈕
+        function unlockbtn(){
+            lockbtns.forEach(btn => {
+                btn.removeAttribute('disabled')
+            })
+        }
+
+    </script>
+
+  </body>
+</html>
