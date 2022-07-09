@@ -62,7 +62,7 @@ const startBtn = document.querySelector('.startBtn')
       })
       // 創一個不重複數字陣列
       let setArr = Array.from(new Set(GuessAnswer))
-      if(wrongArr.length > 0 || setArr < 4){
+      if(wrongArr.length > 0 || setArr.length < 4 || GuessAnswer.length > 4){
         alert('請輸入4個不重複整數')
         location.reload()
       }
