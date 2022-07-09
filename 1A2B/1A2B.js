@@ -40,16 +40,27 @@ const startBtn = document.querySelector('.startBtn')
     }
     //隨機陣列 toastBody.textContent
     function getRandomNum() {
-      const randomArray = []
-      const ArrayLength = 15
-      for (let i = 0; i < ArrayLength; i++) {
-        randomArray.push(Math.floor((Math.random() * 9)))
+      // const randomArray = []
+      // const ArrayLength = 15
+      // for (let i = 0; i < ArrayLength; i++) {
+      //   randomArray.push(Math.floor((Math.random() * 9)))
+      // }
+      
+      // finalAnswer = randomArray.reduce((a, b) => {
+      //   if (!a.includes(b) && a.length < 4) a.push(b)
+      //   return a
+      // }, [])
+
+
+      while(finalAnswer.length < 4){
+        let x = Math.floor((Math.random() * 9))
+        if(!finalAnswer.includes(x)){
+          finalAnswer.push(x)
+        }
       }
-      finalAnswer = randomArray.reduce((a, b) => {
-        if (!a.includes(b) && a.length < 4) a.push(b)
-        return a
-      }, [])
+      console.log(finalAnswer)
     }
+    
     // 取得input數字
     function getGuess() {
       Array.from(inputNum.value).forEach(num => {
