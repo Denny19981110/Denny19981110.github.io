@@ -181,12 +181,14 @@
     // 取得input數字
     function getGuess() {
       Array.from(inputNum.value).forEach(num => {
+        //不是數字的丟到錯誤陣列
         if (!Number.isInteger(Number(num))){
           wrongArr.push(num)
         }else{
           GuessAnswer.push(Number(num))
         }
       })
+      
       if(wrongArr.length > 0 || GuessAnswer.length > 4){
         alert('請輸入4個整數')
         location.reload()
