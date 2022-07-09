@@ -20,9 +20,8 @@ const startBtn = document.querySelector('.startBtn')
         unlockBtns()
         startBtn.setAttribute('disabled', 'disabled')
       })
-      enterGuess.addEventListener('click', event => {
+      enterGuess.addEventListener('click',  function () {
         getGuess()
-        // testAnswer()
         showResult()
         clearInput()
       })
@@ -31,6 +30,13 @@ const startBtn = document.querySelector('.startBtn')
         toastBody.textContent = ''
         showFinalAnswer()
       })
+      inputNum.onkeypress = function(event){
+        if(event.keyCode == 13){
+          getGuess()
+          showResult()
+          clearInput()
+        }
+    }
     }
     //隨機陣列 toastBody.textContent
     function getRandomNum() {
@@ -54,8 +60,9 @@ const startBtn = document.querySelector('.startBtn')
           GuessAnswer.push(Number(num))
         }
       })
-      wrongArr = Array.from(new Set(GuessAnswer))
-      if(wrongArr.length > 0){
+      // 創一個不重複數字陣列
+      let setArr = Array.from(new Set(GuessAnswer))
+      if(wrongArr.length > 0 || setArr < 4){
         alert('請輸入4個不重複整數')
         location.reload()
       }
@@ -78,6 +85,7 @@ const startBtn = document.querySelector('.startBtn')
       if (a == 4) {
         result.style.backgroundColor = 'lightGreen'
         enterGuess.setAttribute('disabled', 'disabled')
+        alert('恭喜通關，請重新開始')
       } else {
         result.style.backgroundColor = 'Red'
       }
