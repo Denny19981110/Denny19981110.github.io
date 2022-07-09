@@ -7,13 +7,11 @@ const startBtn = document.querySelector('.startBtn')
     const answerBox = document.querySelector('.answerBox')
     const lockBtn = document.querySelectorAll('button:not(.startBtn)')
 
-
     let GuessAnswer = []
     let finalAnswer = []
     let wrongArr = []
     let a, b
     let toastBody = document.querySelector('.toast-body')
-
 
     window.onload = function () {
       lockBtns()
@@ -34,10 +32,8 @@ const startBtn = document.querySelector('.startBtn')
         showFinalAnswer()
       })
     }
-
     //隨機陣列 toastBody.textContent
     function getRandomNum() {
-
       const randomArray = []
       const ArrayLength = 15
       for (let i = 0; i < ArrayLength; i++) {
@@ -47,9 +43,7 @@ const startBtn = document.querySelector('.startBtn')
         if (!a.includes(b) && a.length < 4) a.push(b)
         return a
       }, [])
-      console.log(finalAnswer)
     }
-
     // 取得input數字
     function getGuess() {
       Array.from(inputNum.value).forEach(num => {
@@ -60,23 +54,18 @@ const startBtn = document.querySelector('.startBtn')
           GuessAnswer.push(Number(num))
         }
       })
-      
-      if(wrongArr.length > 0 || GuessAnswer.length > 4){
-        alert('請輸入4個整數')
+      wrongArr = Array.from(new Set(GuessAnswer))
+      if(wrongArr.length > 0){
+        alert('請輸入4個不重複整數')
         location.reload()
       }
-      console.log(GuessAnswer)
     }
-
     //比較數字
     function compareAnswer(GuessAnswer, finalAnswer) {
       let intersect = finalAnswer.filter(x => GuessAnswer.includes(x))
       a = intersect.filter(x => finalAnswer.indexOf(x) == GuessAnswer.indexOf(x)).length
       b = intersect.length - a
-      console.log(a)
-      console.log(b)
     }
-
     //顯示結果
     function showResult() {
       let result = document.createElement('span')
@@ -95,7 +84,6 @@ const startBtn = document.querySelector('.startBtn')
       spanBox.appendChild(result)
       spanBox.appendChild(inputAnswer)
       answerBox.appendChild(spanBox)
-      console.log(result.textContent)
       answerBox.scrollTo(0, answerBox.scrollHeight)
     }
     // 清除input.value 
@@ -121,7 +109,6 @@ const startBtn = document.querySelector('.startBtn')
     }
     //顯示答案
     function showFinalAnswer() {
-
       finalAnswer.forEach(num => {
         toastBody.textContent += num
       })
