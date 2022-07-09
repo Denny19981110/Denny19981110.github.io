@@ -14,7 +14,7 @@
       background-image: url("https://picsum.photos/id/213/600/400");
       background-repeat: no-repeat;
       background-size: 100% 100vh;
-      
+
     }
 
     .container {
@@ -31,8 +31,8 @@
 
     .answerBox p {
       border: 3px solid #dee2e6;
-      border-radius:.375rem;
-      background-color:#fff;
+      border-radius: .375rem;
+      background-color: #fff;
     }
 
     .answerBox span:first-of-type {
@@ -138,6 +138,7 @@
 
     let GuessAnswer = []
     let finalAnswer = []
+    let wrongArr = []
     let a, b
     let toastBody = document.querySelector('.toast-body')
 
@@ -151,6 +152,7 @@
       })
       enterGuess.addEventListener('click', event => {
         getGuess()
+        // testAnswer()
         showResult()
         clearInput()
       })
@@ -178,17 +180,16 @@
 
     // 取得input數字
     function getGuess() {
-      //Question
-      if ((Array.from(inputNum.value)).includes(typeof string)) {
-        alert('請輸入4個數字')
-        location.reload()
-      } else {
-        Array.from(inputNum.value).forEach(num => {
+      Array.from(inputNum.value).forEach(num => {
+        if (!Number.isInteger(Number(num))){
+          wrongArr.push(num)
+        }else{
           GuessAnswer.push(Number(num))
-          if (GuessAnswer.length > 4) {
-            alert('請輸入4個數字')
-          }
-        })
+        }
+      })
+      if(wrongArr.length > 0 || GuessAnswer.length > 4){
+        alert('請輸入4個整數')
+        location.reload()
       }
       console.log(GuessAnswer)
     }
