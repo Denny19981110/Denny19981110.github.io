@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      background-image: url("https://picsum.photos/id/213/600/400");
+      background-repeat: no-repeat;
+      background-size: 100% 100vh;
+      
+    }
+
+    .container {
+      max-width: 960px;
+    }
+
+    .answerBox {
+      height: 400px;
+      overflow: auto;
+      scroll-padding-top: 200px;
+      flex-direction: column;
+      display: flex;
+    }
+
+    .answerBox p {
+      border: 3px solid #dee2e6;
+      border-radius:.375rem;
+      background-color:#fff;
+    }
+
+    .answerBox span:first-of-type {
+      display: inline-block;
+      border-radius: .375rem;
+      padding: .5rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .enterGuessBox {
+      border-radius: 0 .375rem .375rem 0;
+    }
+
+    .enterGuess {
+      border-radius: 0 .375rem .375rem 0;
+    }
+
+    .guessAnswerBox {
+      border-radius: .375rem 0 0 .375rem;
+
+    }
+
+    .guessAnswer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    input {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container border border-3 border-dark  px-5 py-2 m-auto">
+    <div class="row">
+      <button class="btn btn-light col-4 border border-secondary startBtn">開始</button>
+      <button class="btn btn-light col-4 border border-secondary restartBtn">重新開始</button>
+      <button class="btn btn-light col-4 border border-secondary showAnswer" id="liveToastBtn">看答案</button>
+    </div>
+    <div class="row py-2">
+      <div class="answerBox col-12 border border-secondary rounded-3">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 p-0 border border-secondary guessAnswerBox">
+        <p class=" w-100 h-100 bg-secondary rounded-0 guessAnswer">猜答案</p>
+      </div>
+      <div class="col-6 p-0 border border-secondary border-end-0 border-start-0 inputBox">
+        <input type="text" class="w-100 h-100 border-0 inputNum">
+      </div>
+      <div class="col-3 p-0 border border-secondary enterGuessBox ">
+        <button class="btn btn-light w-100 h-100 enterGuess">猜</button>
+      </div>
+    </div>
+    <div class="toastBox">
+      <div class="toast-container position-fixed start-50 translate-middle-x top-0  p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto">Answer</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+  <script>
+    const toastTrigger = document.getElementById('liveToastBtn')
+    const toastLiveExample = document.getElementById('liveToast')
+    if (toastTrigger) {
+      toastTrigger.addEventListener('click', () => {
+        const toast = new bootstrap.Toast(toastLiveExample)
+
+        toast.show()
+      })
+    }
+  </script>
+  <script>
+    const startBtn = document.querySelector('.startBtn')
+    const restartBtn = document.querySelector('.restartBtn')
+    const showAnswer = document.querySelector('.showAnswer')
+    const guessAnswer = document.querySelector('.guessAnswer')
+    const inputNum = document.querySelector('.inputNum')
+    const enterGuess = document.querySelector('.enterGuess')
+    const answerBox = document.querySelector('.answerBox')
+    const lockBtn = document.querySelectorAll('button:not(.startBtn)')
+
+
+    let GuessAnswer = []
+    let finalAnswer = []
+    let a, b
+    let toastBody = document.querySelector('.toast-body')
+
+
+    window.onload = function () {
+      lockBtns()
+      startBtn.addEventListener('click', function () {
+        getRandomNum()
+        unlockBtns()
+        startBtn.setAttribute('disabled', 'disabled')
+      })
+      enterGuess.addEventListener('click', event => {
+        getGuess()
+        showResult()
+        clearInput()
+      })
+      restartBtn.addEventListener('click', restart)
+      showAnswer.addEventListener('click', function () {
+        toastBody.textContent = ''
+        showFinalAnswer()
+      })
+    }
+
+    //隨機陣列 toastBody.textContent
+    function getRandomNum() {
+
+      const randomArray = []
+      const ArrayLength = 15
+      for (let i = 0; i < ArrayLength; i++) {
+        randomArray.push(Math.floor((Math.random() * 9)))
+      }
+      finalAnswer = randomArray.reduce((a, b) => {
+        if (!a.includes(b) && a.length < 4) a.push(b)
+        return a
+      }, [])
+      console.log(finalAnswer)
+    }
+
+    // 取得input數字
+    function getGuess() {
+      //Question
+      if ((Array.from(inputNum.value)).includes(typeof string)) {
+        alert('請輸入4個數字')
+        location.reload()
+      } else {
+        Array.from(inputNum.value).forEach(num => {
+          GuessAnswer.push(Number(num))
+          if (GuessAnswer.length > 4) {
+            alert('請輸入4個數字')
+          }
+        })
+      }
+      console.log(GuessAnswer)
+    }
+
+    //比較數字
+    function compareAnswer(GuessAnswer, finalAnswer) {
+      let intersect = finalAnswer.filter(x => GuessAnswer.includes(x))
+      a = intersect.filter(x => finalAnswer.indexOf(x) == GuessAnswer.indexOf(x)).length
+      b = intersect.length - a
+      console.log(a)
+      console.log(b)
+    }
+
+    //顯示結果
+    function showResult() {
+      let result = document.createElement('span')
+      let inputAnswer = document.createElement('span')
+      let spanBox = document.createElement('p')
+
+      compareAnswer(GuessAnswer, finalAnswer)
+      inputAnswer.innerText = inputNum.value
+      result.innerText = `${a}A${b}B`
+      if (a == 4) {
+        result.style.backgroundColor = 'lightGreen'
+        enterGuess.setAttribute('disabled', 'disabled')
+      } else {
+        result.style.backgroundColor = 'Red'
+      }
+      spanBox.appendChild(result)
+      spanBox.appendChild(inputAnswer)
+      answerBox.appendChild(spanBox)
+      console.log(result.textContent)
+      answerBox.scrollTo(0, answerBox.scrollHeight)
+    }
+    // 清除input.value 
+    function clearInput() {
+      inputNum.value = ''
+      GuessAnswer.length = 0
+    }
+    // 鎖住按鈕
+    function lockBtns() {
+      lockBtn.forEach((btn) => {
+        btn.setAttribute('disabled', 'disabled')
+      })
+    }
+    // 解鎖按鈕
+    function unlockBtns() {
+      lockBtn.forEach((btn) => {
+        btn.removeAttribute('disabled')
+      })
+    }
+    // 重新開始
+    function restart() {
+      location.reload()
+    }
+    //顯示答案
+    function showFinalAnswer() {
+
+      finalAnswer.forEach(num => {
+        toastBody.textContent += num
+      })
+    }
+  </script>
+</body>
+
+</html>
