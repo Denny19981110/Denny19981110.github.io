@@ -108,8 +108,6 @@
 
 
 
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
@@ -125,136 +123,7 @@
       })
     }
   </script>
-  <script>
-    const startBtn = document.querySelector('.startBtn')
-    const restartBtn = document.querySelector('.restartBtn')
-    const showAnswer = document.querySelector('.showAnswer')
-    const guessAnswer = document.querySelector('.guessAnswer')
-    const inputNum = document.querySelector('.inputNum')
-    const enterGuess = document.querySelector('.enterGuess')
-    const answerBox = document.querySelector('.answerBox')
-    const lockBtn = document.querySelectorAll('button:not(.startBtn)')
-
-
-    let GuessAnswer = []
-    let finalAnswer = []
-    let wrongArr = []
-    let a, b
-    let toastBody = document.querySelector('.toast-body')
-
-
-    window.onload = function () {
-      lockBtns()
-      startBtn.addEventListener('click', function () {
-        getRandomNum()
-        unlockBtns()
-        startBtn.setAttribute('disabled', 'disabled')
-      })
-      enterGuess.addEventListener('click', event => {
-        getGuess()
-        // testAnswer()
-        showResult()
-        clearInput()
-      })
-      restartBtn.addEventListener('click', restart)
-      showAnswer.addEventListener('click', function () {
-        toastBody.textContent = ''
-        showFinalAnswer()
-      })
-    }
-
-    //隨機陣列 toastBody.textContent
-    function getRandomNum() {
-
-      const randomArray = []
-      const ArrayLength = 15
-      for (let i = 0; i < ArrayLength; i++) {
-        randomArray.push(Math.floor((Math.random() * 9)))
-      }
-      finalAnswer = randomArray.reduce((a, b) => {
-        if (!a.includes(b) && a.length < 4) a.push(b)
-        return a
-      }, [])
-      console.log(finalAnswer)
-    }
-
-    // 取得input數字
-    function getGuess() {
-      Array.from(inputNum.value).forEach(num => {
-        //不是數字的丟到錯誤陣列
-        if (!Number.isInteger(Number(num))){
-          wrongArr.push(num)
-        }else{
-          GuessAnswer.push(Number(num))
-        }
-      })
-      
-      if(wrongArr.length > 0 || GuessAnswer.length > 4){
-        alert('請輸入4個整數')
-        location.reload()
-      }
-      console.log(GuessAnswer)
-    }
-
-    //比較數字
-    function compareAnswer(GuessAnswer, finalAnswer) {
-      let intersect = finalAnswer.filter(x => GuessAnswer.includes(x))
-      a = intersect.filter(x => finalAnswer.indexOf(x) == GuessAnswer.indexOf(x)).length
-      b = intersect.length - a
-      console.log(a)
-      console.log(b)
-    }
-
-    //顯示結果
-    function showResult() {
-      let result = document.createElement('span')
-      let inputAnswer = document.createElement('span')
-      let spanBox = document.createElement('p')
-
-      compareAnswer(GuessAnswer, finalAnswer)
-      inputAnswer.innerText = inputNum.value
-      result.innerText = `${a}A${b}B`
-      if (a == 4) {
-        result.style.backgroundColor = 'lightGreen'
-        enterGuess.setAttribute('disabled', 'disabled')
-      } else {
-        result.style.backgroundColor = 'Red'
-      }
-      spanBox.appendChild(result)
-      spanBox.appendChild(inputAnswer)
-      answerBox.appendChild(spanBox)
-      console.log(result.textContent)
-      answerBox.scrollTo(0, answerBox.scrollHeight)
-    }
-    // 清除input.value 
-    function clearInput() {
-      inputNum.value = ''
-      GuessAnswer.length = 0
-    }
-    // 鎖住按鈕
-    function lockBtns() {
-      lockBtn.forEach((btn) => {
-        btn.setAttribute('disabled', 'disabled')
-      })
-    }
-    // 解鎖按鈕
-    function unlockBtns() {
-      lockBtn.forEach((btn) => {
-        btn.removeAttribute('disabled')
-      })
-    }
-    // 重新開始
-    function restart() {
-      location.reload()
-    }
-    //顯示答案
-    function showFinalAnswer() {
-
-      finalAnswer.forEach(num => {
-        toastBody.textContent += num
-      })
-    }
-  </script>
+  <script src="1A2B.js"></script>
 </body>
 
 </html>
