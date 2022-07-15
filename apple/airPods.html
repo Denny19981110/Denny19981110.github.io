@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apple</title>
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        .btn:focus,
+        .btn:active:focus,
+        .btn.active:focus,
+        .btn.focus,
+        .btn:active.focus,
+        .btn.active.focus,
+        button:focus {
+            outline: 1px solid #0af;
+        }
+
+        .navbar .btn:hover {
+            outline: none !important;
+        }
+
+        .color-btn,
+        .fit-btn {
+            border: 1px solid #dee2e6;
+            position: relative;
+        }
+
+        .container .btn:hover,
+        .apple-nav .btn:hover {
+            outline: 1px solid #0af;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo a {
+            font-size: 25px;
+        }
+        .goods-info > span{
+            color:#c96427;
+            font-weight: 600;
+        }
+
+        .promote-section {
+            background-color: #f5f5f7;
+        }
+
+        .cart-info {
+            border-bottom: 1px solid #ccc;
+
+        }
+
+        .cart a {
+            text-decoration: none;
+        }
+
+        .container{
+            max-width:960px;
+        }
+
+        
+
+        @media screen and (min-width:992px) {
+
+            .logo {
+                display: unset;
+                justify-content: unset;
+            }
+
+            .logo a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container ">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarToggler">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                    <li class="logo"><a class=" btn btn-dark product" href="/index.html"><i
+                                class="fa-brands fa-apple"></i></a>
+                    </li>
+                    <li><a class="btn btn-dark product" href="#">商店</a></li>
+                    <li><a class="btn btn-dark product" href="/ipad.html">iPad</a></li>
+                    <li><a class="btn btn-dark product" href="/iphone.html">iPhone</a></li>
+                    <li><a class="btn btn-dark product" href="/airPods.html">AirPods</a></li>
+                    <li><a class="btn btn-dark product" href="#">Mac</a></li>
+                    <li><a class="btn btn-dark product" href="#">Watch</a></li>
+                    <li><a class="btn btn-dark product" href="#">TV和家庭</a></li>
+                    <li><a class="btn btn-dark product" href="#">Apple獨家</a></li>
+                    <li><a class="btn btn-dark product" href="#">配件</a></li>
+                    <li><a class="btn btn-dark product" href="#">支援服務</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <section class="d-flex justify-content-center py-2 promote-section">
+        <p class="mb-0">購買 AirPods，免費試用 Apple Music 6 個月⁺。</p>
+    </section>
+
+    <section class="container py-3">
+        <div class="row">
+            <div class="col-12 col-md-6 goods-info">
+                <span>免額外付費鐫刻服務</span>
+                <h1>
+                    <strong class="product-name"></strong>
+                </h1>
+                <div class="cart">
+                    <div class="cart-info py-2">
+                        <h4 class="cart-price fw-bold py-2"></h4>
+                        <a href="#"> 0 利率分期付款，每月 NT$665 起，共 12 個月</a>
+                    </div>
+                    <div class="personal-service ">
+                        <p>
+                            <span><i class="fa-solid fa-face-smile"></i></span>
+                            <span>
+                                <a href="#">&ensp;免額外付費個人化服務</a>
+                            </span>
+                        </p>
+                        <p class="col-12" style="padding-left:25px">表情符號、名稱、暱稱文字與數字可混搭鐫刻，打造專屬於你的 AirPods。只在 Apple 提供。</p>
+                    </div>
+                    <div class="order-now d-flex py-2">
+                        <span><i class="fa-solid fa-briefcase"></i></span>
+                        <p>
+                            <span>&ensp;立即訂購。店內取貨：</span>
+                            <span class="d-block"><strong>&ensp;今天</strong>，地點 : <a href="#"> Apple 台北 101</a></span>
+                        </p>
+                    </div>
+                    <div class="order-later d-flex">
+                        <span><i class="fa-solid fa-box-open"></i></span>
+                        <p>
+                            <span>&ensp;下午 3 前訂購。 運送至 <a href="#">220++</a></span>
+                            <span class="d-block"><strong>&ensp;明天 — 免額外付費</strong></span>
+                        </p>
+                    </div>
+                    <button class="btn btn-primary w-100">加入購物袋</button>
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="row">
+                    <div class="img-box px-4 py-5 text-center col-12">
+                        <img class="product-img w-100" src="https://picsum.photos/id/213/600/400" alt="">
+                    </div>
+                    <div class="small-img row"></div>
+                </div>
+            </div>
+    </section>
+
+    <section class="billbord">
+        <div class="container">
+            <div class="billbord-info">
+                <h2 class="fw-bold text-center">
+                    傳情達意，也能花樣百出。
+                </h2>
+                <p class="fw-bold text-center">以表情符號、名稱、暱稱文字與數字混搭鐫刻你的 AirPods，免額外付費。只在 Apple 提供。</p>
+                <div class="billbord-img">
+                    <img class="w-100" src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/airpods-engraving-banner-202110?wid=958&hei=190&fmt=jpeg&qlt=95&.v=1632938891000" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e95c98306e.js" crossorigin="anonymous"></script>
+
+    <script>
+        // 宣告
+        const AirPods = [
+            {
+                name: 'AirPods Pro',
+                price: 7990,
+                imgList: [
+                    { src: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MWP22?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634795000' },
+                    { src: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MWP22_AV1?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634652000' },
+                    { src: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MWP22_AV2?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634643000' },
+                    { src: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MWP22_AV3?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634662000' },
+                    { src: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MWP22_AV4_GEO_TW?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1604112986000' },
+                    { src: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MWP22_AV5_GEO_TW?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634791000' },
+                ]
+            }
+        ]
+
+        // DOM
+        const productName = document.querySelector('.product-name')
+        const cartPrice = document.querySelector('.cart-price')
+        const productImg = document.querySelector('.product-img')
+        const smallImgBox = document.querySelector('.small-img')
+
+        window.onload = function(){
+            getInfo()
+
+        }
+
+        function getInfo(){
+            // productName.innerText = AirPods.name
+            // cartPrice.innerText = AirPods.price
+            AirPods.forEach(airpod=>{
+                productName.innerText = airpod.name
+                cartPrice.innerText = `NT$${airpod.price}`
+                productImg.src = airpod.imgList[0].src
+
+                airpod.imgList.forEach(item=>{
+                    console.log(item.src)
+                    const div = document.createElement('div')
+                    const img = document.createElement('img')
+                    img.src = item.src
+                    img.classList.add('w-100')
+
+                    div.classList.add('col-4','col-md-2','btn')
+
+                    div.onclick = function(){
+                        productImg.src = item.src
+                    }
+
+                    div.appendChild(img)
+                    smallImgBox.appendChild(div)
+
+                    
+                })
+
+
+            })
+        }
+
+
+    </script>
+
+</body>
+
+</html>

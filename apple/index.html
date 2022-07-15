@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apple</title>
+    <link rel="stylesheet" href="/reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .btn:focus,
+        .btn:active:focus,
+        .btn.active:focus,
+        .btn.focus,
+        .btn:active.focus,
+        .btn.active.focus,
+        button:focus {
+            outline: 1px solid #0af;
+            box-shadow: none !important;
+        }
+
+        .color-btn,
+        .fit-btn {
+            border: 1px solid #dee2e6;
+            position: relative;
+        }
+
+        .btn:hover {
+            outline: 1px solid #0af;
+        }
+
+        .shop-online {
+            background-color: #f5f5f7;
+        }
+
+        .shop-online span {
+            color: #aaa;
+
+        }
+
+        .iphone-section,
+        .watch-section {
+            text-align: center;
+            position: relative;
+            /* font-size: 30px; */
+        }
+
+        .iphone-section {
+            background-image: url("https://www.apple.com/v/home/aq/images/heroes/iphone-13/hero_iphone13_avail__gnqqkzuai6um_small_2x.jpg");
+            background-size: 100%;
+            background-position: 100%;
+            height: 600px;
+            background-repeat: no-repeat;
+
+        }
+
+        .unit-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+        }
+
+        .watch-section{
+            background-image: url("https://www.apple.com/tw/home/heroes/watch-series-7/images/hero_watch_lte__b8er858e34gi_small_2x.jpg");
+            background-size: 100%;
+            background-position: 100%;
+            height: 600px;
+            background-repeat: no-repeat;
+        }
+
+        .title a{
+            color: #000;
+        }
+        .title h2{
+            font-size: 40px;
+            font-weight: 600;
+        }
+        .watch-section .title span{
+            color: #f00;
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 2;
+        }
+        .logo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo a {
+            font-size: 25px;
+        }
+        .navbar .btn:hover{
+            outline: none !important;
+        }
+        .container{
+            max-width:960px;
+        }
+        .img-wrapper{
+            height: 400px;
+            max-height:400px;
+            
+        }
+        .unit-airpods-img,
+        .unit-macbook-img{
+            background-image: url('https://www.apple.com/v/home/aq/images/promos/ipad-air/promo_ipadair_avail__ferd4bfpcdm6_medium.jpg');
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            width: 100%;
+            /* height: 100%; */
+            height: 400px;
+            max-height:400px;
+            top: 0;
+            left: 0;
+        }
+        .unit-title{
+            position:absolute;
+            z-index: 4;
+            color: #fff;
+        }
+        .index-promote{
+            display: flex;
+            justify-content: center;
+        }
+        .unit-macbook-img{
+            background-image: url('https://www.apple.com/v/home/aq/images/promos/macbook-pro-13/promo_mbp13__buwssod6c8vm_medium.jpg');
+        }
+        @media screen and (min-width:768px) {
+
+        }
+
+        @media screen and (min-width:992px) {
+
+            .logo {
+                display: unset;
+                justify-content: unset;
+            }
+            .logo a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="apple-nav navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container ">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarToggler">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                    <li class="logo"><a class=" btn btn-dark product" href="/index.html"><i
+                                class="fa-brands fa-apple"></i></a>
+                    </li>
+                    <li><a class="btn btn-dark product" href="#">商店</a></li>
+                    <li><a class="btn btn-dark product" href="/ipad.html">iPad</a></li>
+                    <li><a class="btn btn-dark product" href="/iphone.html">iPhone</a></li>
+                    <li><a class="btn btn-dark product" href="/airPods.html">AirPods</a></li>
+                    <li><a class="btn btn-dark product" href="#">Mac</a></li>
+                    <li><a class="btn btn-dark product" href="#">Watch</a></li>
+                    <li><a class="btn btn-dark product" href="#">TV和家庭</a></li>
+                    <li><a class="btn btn-dark product" href="#">Apple獨家</a></li>
+                    <li><a class="btn btn-dark product" href="#">配件</a></li>
+                    <li><a class="btn btn-dark product" href="#">支援服務</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <section class="shop-online container-fluid d-flex justify-content-center align-items-center py-2">
+        <a href="#">線上選購</a>
+        <span>，享免額外付費運送及專員協助等服務。</span>
+    </section>
+
+    <section class="container py-3 iphone-section">
+        <a href="/iphone.html" class="unit-link">
+            <div class="row">
+                <div class="col-12 title">
+                    <a href="/iphone.html">
+                        <h2>iPhone 13</h2>
+                    </a>
+                </div>
+                <div class="col-12 subhead">
+                    <p>超能力，超有實力。</p>
+                </div>
+                <div class="col-12 shop-link">
+                    <a href="/iphone.html">進一步了解 <i class="fa-solid fa-angle-right"></i></a>
+                    <a href="/iphone.html">&ensp;購買 <i class="fa-solid fa-angle-right"></i></a>
+                </div>
+        </a>
+
+        </div>
+    </section>
+    <section class="container py-3 watch-section">
+        <a href="#" class="unit-link">
+            <div class="row">
+                <div class="col-12 title">
+                    <a href="/iphone.html">
+                        <h2><i class="fa-brands fa-apple"></i>WATCH</h2>
+                        <span>SERIES7</span>
+                    </a>
+                </div>
+                <div class="col-12 subhead">
+                    <p>我們歷來最大的顯示器</p>
+                </div>
+                <div class="col-12 shop-link">
+                    <a href="/iphone.html">進一步了解 <i class="fa-solid fa-angle-right"></i></a>
+                    <a href="/iphone.html">&ensp;購買 <i class="fa-solid fa-angle-right"></i></a>
+                </div>
+    
+            </div>
+        </a>
+    </section>
+
+    <section class="container index-promote-section py-3">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-5 mx-2 position-relative index-promote">
+                <a href="#" class="unit-link position-absolute w-100"></a>
+                <div class="unit-title py-3 text-center">
+                    <h3>iPad&nbsp;air</h3>
+                    <h5>輕，炫，重實力</h5>
+                    <div class="promote-link">
+                        <a href="#">進一步了解 <i class="fa-solid fa-angle-right"></i></a>
+                        <a href="#">&ensp;&ensp;購買 <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="img-wrapper w-100">
+                    <figure class="unit-airpods-img"></figure>
+                </div>
+            </div>
+                <div class="col-12 col-md-5 mx-2 position-relative index-promote">
+                    <a href="#" class="unit-link position-absolute w-100"></a>
+                    <div class="unit-title py-3 text-center">
+                        <h3>MacBook&nbsp;Pro&nbsp;13&nbsp;吋</h3>
+                        <h5>來自M2的超強驅動</h5>
+                        <div class="promote-link">
+                            <a href="#">進一步了解 <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#">&ensp;&ensp;購買 <i class="fa-solid fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="img-wrapper w-100">
+                        <figure class="unit-macbook-img"></figure>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e95c98306e.js" crossorigin="anonymous"></script>
+
+    <script>
+        // 宣告
+        const iphoneList = [
+                {
+                    name: 'iPhone 13',
+                    prodTitle:'購買 iPhone 13',
+                    price: 22900,
+                    baseImg: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone13-digitalmat-gallery-1-202203?wid=364&hei=333&fmt=png-alpha&.v=1645574660282',
+                    colorList: [
+                        { name: '綠色', color: '#4d5e4c', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-family-hero?wid=940&hei=1112&fmt=png-alpha&.v=1645036276543' },
+                        { name: '粉紅色', color: '#fae1dc', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-mini-pink-select-2021?wid=470&hei=556&fmt=png-alpha&.v=1645572315655' },
+                        { name: '藍色', color: '#437792', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-mini-blue-select-2021?wid=470&hei=556&fmt=png-alpha&.v=1645572315986' },
+                        { name: '星光色', color: '#fbf7f4', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-mini-starlight-select-2021?wid=470&hei=556&fmt=png-alpha&.v=1645572315872' },
+                        { name: '午夜色', color: '#42474d', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-mini-midnight-select-2021?wid=470&hei=556&fmt=png-alpha&.v=1645572315770' },
+                    ],
+                    spec: [
+                        {
+                            name: '儲存容量',
+                            specDetail: [
+                                { name: '128GB', fit: 0 },
+                                { name: '256GB', fit: 3500 },
+                                { name: '512GB', fit: 10500 }
+                            ]
+                        },
+                        {
+                            name:'機型',
+                            specDetail:[
+                                {name:'iPhone 13 mini', content:'5.4吋顯示器', fit:0},
+                                {name:'iPhone 13', content:'6.1吋顯示器', fit:3000},
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name:'iPhone SE',
+                    productTitle:'購買 iPhone SE',
+                    price: 13900,
+                    baseImg:'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-se-family-select-202203?wid=940&hei=1112&fmt=jpeg&qlt=90&.v=1646070494883',
+                    colorList:[
+                        { name: '午夜色', color: '#42474d', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-se-midnight-select-202203?wid=470&hei=556&fmt=png-alpha&.v=1646070494831' },
+                        { name: '星光色', color: '#fbf7f4', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-se-starlight-select-202203?wid=470&hei=556&fmt=png-alpha&.v=1646070494844' },
+                        { name: '(PRODUCT)RED', color:'#f00', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-se-red-select-202203?wid=470&hei=556&fmt=png-alpha&.v=1646070494834'}
+                    ],
+                    spec: [
+                        {
+                            name: '儲存容量',
+                            specDetail: [
+                                { name: '64GB', fit: 0 },
+                                { name: '128GB', fit: 1600 },
+                                { name: '256GB', fit: 5100 }
+                            ]
+                        },
+                    ]
+                }
+            ]
+
+    </script>
+
+</body>
+
+</html>

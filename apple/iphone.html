@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apple</title>
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+
+
+        .navbar .btn:hover{
+            outline: none !important;
+        }
+
+        .color-btn,
+        .fit-btn {
+            border: 1px solid #dee2e6;
+            position: relative;
+        }
+
+        .container .btn:hover,
+        .apple-nav .btn:hover{
+            outline: 1px solid #0af;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo a {
+            font-size: 25px;
+        }
+        .cart-info{
+            border-bottom: 1px solid #ccc;
+            
+        }
+        .cart a{
+            text-decoration: none;
+        }
+
+        .container{
+            max-width:960px;
+        }
+
+        @media screen and (min-width:992px) {
+
+            .logo {
+                display: unset;
+                justify-content: unset;
+            }
+
+            .logo a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container ">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarToggler">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                    <li class="logo"><a class=" btn btn-dark product" href="/index.html"><i
+                                class="fa-brands fa-apple"></i></a>
+                    </li>
+                    <li><a class="btn btn-dark product" href="#">商店</a></li>
+                    <li><a class="btn btn-dark product" href="/ipad.html">iPad</a></li>
+                    <li><a class="btn btn-dark product" href="/iphone.html">iPhone</a></li>
+                    <li><a class="btn btn-dark product" href="/airPods.html">AirPods</a></li>
+                    <li><a class="btn btn-dark product" href="#">Mac</a></li>
+                    <li><a class="btn btn-dark product" href="#">Watch</a></li>
+                    <li><a class="btn btn-dark product" href="#">TV和家庭</a></li>
+                    <li><a class="btn btn-dark product" href="#">Apple獨家</a></li>
+                    <li><a class="btn btn-dark product" href="#">配件</a></li>
+                    <li><a class="btn btn-dark product" href="#">支援服務</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <section class='apple-nav d-flex justify-content-center align-items-center '>
+        <ul class="nav-bar list-unstyled d-flex m-0 row justify-content-center ">
+        </ul>
+    </section>
+    <section class="apple-info container d-flex justify-content-between align-items-center py-2">
+        <h3 class="m-0 product-type"></h3>
+        <strong class="m-0 price-top"></strong>
+    </section>
+
+    <section class="container py-3">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="img-box px-4 py-5 text-center">
+                    <img class="product-img w-100" src="https://picsum.photos/id/213/600/400" alt="">
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <h1>
+                    <strong class="product-name"></strong>
+                </h1>
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-color" aria-expanded="true"
+                                aria-controls="panelsStayOpen-color">
+                                外觀
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-color" class="accordion-collapse collapse show"
+                            aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body">
+                                <h5><strong>外觀</strong></h5>
+                                <div class="row color-area">
+                                    <!-- <div class="col-6 mb-3">
+                                        <button class="btn color-btn w-100">
+                                            <div
+                                                class="py-4 d-flex flex-column justify-content-center align-items-center">
+                                                <i class="fas fa-circle"></i>
+                                                <span class="color-name">{{黑色}}</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <button class="btn color-btn w-100">
+                                            <div
+                                                class="py-4 d-flex flex-column justify-content-center align-items-center">
+                                                <i class="fas fa-circle"></i>
+                                                <span class="color-name">{{黑色}}</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <button class="btn color-btn w-100">
+                                            <div
+                                                class="py-4 d-flex flex-column justify-content-center align-items-center">
+                                                <i class="fas fa-circle"></i>
+                                                <span class="color-name">{{黑色}}</span>
+                                            </div>
+                                        </button>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart">
+                    <div class="cart-info py-2">
+                        <h2 class="cart-price fw-bold py-2"></h2>
+                        <span class="d-block">含加值型營業稅：約 NT$<span class="tax">0</span>*。</span>
+                        <a href="#"> 0 利率分期付款，每月 NT$1,908 起，共 12 個月</a>
+                    </div>
+                    <div class="order-now d-flex py-2">
+                        <span><i class="fa-solid fa-briefcase"></i></span>
+                        <p>
+                            <span>&ensp;立即訂購。店內取貨：</span>
+                            <span class="d-block"><strong>&ensp;今天</strong>，地點 : <a href="#"> Apple 台北 101</a></span>
+                        </p>
+                    </div>
+                    <div class="order-later d-flex">
+                        <span><i class="fa-solid fa-box-open"></i></span>
+                        <p>
+                            <span>&ensp;下午 3 前訂購。 運送至 <a href="#">220++</a></span>
+                            <span class="d-block"><strong>&ensp;明天 — 免額外付費</strong></span>
+                        </p>
+                    </div>
+                    <button class="btn btn-primary w-100">加入購物袋</button>
+                </div>
+            </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e95c98306e.js" crossorigin="anonymous"></script>
+
+    <script>
+        // 宣告
+        const iphoneList = [
+            {
+                name: 'iPhone 13',
+                prodTitle: '購買 iPhone 13',
+                price: 22900,
+                baseImg: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-card-40-iphone13-202203?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1646335268199',
+                colorList: [
+                    { name: '綠色', color: '#4d5e4c', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-mini-green-select?wid=470&hei=556&fmt=png-alpha&.v=1645036275894' },
+                    { name: '粉紅色', color: '#fae1dc', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-mini-pink-select-2021?wid=470&hei=556&fmt=png-alpha&.v=1645572315655' },
+                    { name: '藍色', color: '#437792', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-mini-blue-select-2021?wid=470&hei=556&fmt=png-alpha&.v=1645572315986' },
+                    { name: '星光色', color: '#fbf7f4', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-mini-starlight-select-2021?wid=470&hei=556&fmt=png-alpha&.v=1645572315872' },
+                    { name: '午夜色', color: '#42474d', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-mini-midnight-select-2021?wid=470&hei=556&fmt=png-alpha&.v=1645572315770' },
+                ],
+                spec: [
+                    {
+                        name: '機型',
+                        specDetail: [
+                            { name: 'iPhone 13 mini', content: '5.4吋顯示器', fit: 0 },
+                            { name: 'iPhone 13', content: '6.1吋顯示器', fit: 3000 },
+                        ]
+                    },
+                    {
+                        name: '儲存容量',
+                        specDetail: [
+                            { name: '128GB', content: '', fit: 0 },
+                            { name: '256GB', content: '', fit: 3500 },
+                            { name: '512GB', content: '', fit: 10500 }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: 'iPhone SE',
+                productTitle: '購買 iPhone SE',
+                price: 13900,
+                baseImg: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-card-40-iphonese-202203?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1646415838921',
+                colorList: [
+                    { name: '午夜色', color: '#42474d', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-se-midnight-select-202203?wid=470&hei=556&fmt=png-alpha&.v=1646070494831' },
+                    { name: '星光色', color: '#fbf7f4', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-se-starlight-select-202203?wid=470&hei=556&fmt=png-alpha&.v=1646070494844' },
+                    { name: '(PRODUCT)RED', color: '#f00', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-se-red-select-202203?wid=470&hei=556&fmt=png-alpha&.v=1646070494834' }
+                ],
+                spec: [
+                    {
+                        name: '儲存容量',
+                        specDetail: [
+                            { name: '64GB',  content: '', fit: 0 },
+                            { name: '128GB', content: '', fit: 1600 },
+                            { name: '256GB', content: '', fit: 5100 }
+                        ]
+                    },
+                ]
+            }
+        ]
+
+
+        // DOM
+        const navbar = document.querySelector('.nav-bar')
+        const productType = document.querySelector('.product-type')
+        const priceTop = document.querySelector('.price-top')
+        const productName = document.querySelector('.product-name')
+        const productImg = document.querySelector('.product-img')
+
+        const accordionBtn = document.querySelector('.accordion-button')
+        const colorAreaBtn = document.querySelector('[aria-controls="panelsStayOpen-color"]')
+        const colorArea = document.querySelector('.color-area')
+        const cartPrice = document.querySelector('.cart-price')
+        const tax = document.querySelector('.tax')
+        
+
+        const accordionBox = document.querySelector('.accordion')
+
+        // window.onload
+        window.onload = function () {
+            showNavbar()
+
+            selectProduct(iphoneList[0])
+        }
+
+        function showNavbar() {
+
+            iphoneList.forEach((item, index) => {
+                const li = document.createElement('li')
+                const a = document.createElement('a')
+                const img = document.createElement('img')
+                a.innerText = item.name
+                a.href = `#${item.name}`
+                a.classList.add('btn', 'product')
+                a.onclick = function () {
+                    selectProduct(iphoneList[index])
+                }
+                img.src = item.baseImg
+                img.classList.add('w-100')
+                a.classList.add('w-100',)
+                li.classList.add('col-6', 'col-md-3', 'goods-btn','mt-2')
+
+                a.appendChild(img)
+                li.appendChild(a)
+                navbar.appendChild(li)
+            })
+        }
+
+        function selectProduct(product) {
+            clearColorArea()
+
+            productType.innerText = product.name
+            productName.innerText = product.name
+            productImg.src = product.baseImg
+            priceTop.innerText = `$${product.price}`
+
+            //color
+            product.colorList.forEach(item => {
+                const div = document.createElement('div')
+                div.classList.add('col-6', 'mb-3')
+                const btn = document.createElement('button')
+                btn.classList.add('btn', 'color-btn', 'w-100')
+                btn.onclick = function () {
+                    productImg.src = item.img
+
+                    colorAreaBtn.innerText = item.name
+                    colorAreaBtn.click()
+                }
+
+                const btnDiv = document.createElement('div')
+                btn.classList.add('py-4', 'd-flex', 'flex-column', 'justify-content-center', 'align-items-center')
+                const i = document.createElement('i')
+                i.classList.add('fas', 'fa-circle')
+                i.style.color = item.color
+                const span = document.createElement('span')
+                span.classList.add('d-block')
+                span.innerText = item.name
+
+                btnDiv.appendChild(i)
+                btnDiv.appendChild(span)
+                btn.appendChild(btnDiv)
+                div.appendChild(btn)
+                colorArea.appendChild(div)
+            })
+
+            product.spec.forEach(item => {
+                
+                const accordionItem = document.createElement('div')
+                accordionItem.classList.add('accordion-item')
+                const accordionTitle = document.createElement('h2')
+                accordionTitle.classList.add('accordion-header')
+                const accordionBtn = document.createElement('button')
+                accordionBtn.innerHTML = item.name
+                accordionBtn.classList.add('accordion-button')
+                accordionBtn.setAttribute('type', 'button')
+                accordionBtn.setAttribute('data-bs-toggle', 'collapse')
+                accordionBtn.setAttribute('data-bs-target', `#paneIsStayOpen-${item.name}`)
+                accordionBtn.setAttribute('aria-expandex', 'true')
+                accordionBtn.setAttribute('ariia-controls', `paneIsStayOpen-${item.name}`)
+
+                accordionTitle.appendChild(accordionBtn)
+
+                const accordionContent = document.createElement('div')
+                accordionContent.setAttribute('id', `paneIsStayOpen-${item.name}`)
+                accordionContent.classList.add('accordion-collapse', 'collapse', 'show')
+                const accordionBody = document.createElement('div')
+                accordionBody.classList.add('accordion-body')
+                const h5 = document.createElement('h5')
+                const strong = document.createElement('strong')
+                strong.innerText = item.name
+                h5.appendChild(strong)
+
+                const specDiv = document.createElement('div')
+                specDiv.classList.add('row', 'spec-area')
+                item.specDetail.forEach(specItem => {
+                    console.log(specItem)
+                    const div = document.createElement('div')
+                    div.classList.add('col-lg-6', 'mb-3','col-12')
+                    const btn = document.createElement('button')
+                    btn.classList.add('btn', 'w-100','border')
+                    btn.setAttribute('fit', specItem.fit)
+
+                    btn.onclick = function () {
+                        specDiv.querySelectorAll('.btn').forEach(b => {
+                            b.setAttribute('selected', 'false')
+                        })
+                        btn.setAttribute('selected', 'true')
+                        showPrice(product)
+
+                        accordionBtn.innerText = specItem.name
+                        accordionBtn.click()
+
+                    }
+                    const btnDiv = document.createElement('div')
+                    btnDiv.classList.add('py-4', 'd-flex', 'flex-column','justify-content-center', 'align-items-center')
+
+                    const p = document.createElement('p')
+                    p.classList.add('spec-val', 'm-0')
+                    p.innerHTML = `<strong> ${specItem.name}</strong>`
+                    const span = document.createElement('span')
+                    span.classList.add('fit')
+                    span.innerText =` ${specItem.content} \n +NT$${specItem.fit }元`
+                    btnDiv.appendChild(p)
+                    btnDiv.appendChild(span)
+                    btn.appendChild(btnDiv)
+                    div.appendChild(btn)
+                    specDiv.appendChild(div)
+                })
+                accordionBody.appendChild(specDiv)
+                accordionBody.appendChild(h5)
+                accordionContent.appendChild(accordionBody)
+                accordionItem.appendChild(accordionTitle)
+                accordionItem.appendChild(accordionContent)
+                accordionBox.appendChild(accordionItem)
+            })
+            specArea = document.querySelector('.spec-area')
+
+        }
+
+        function showPrice(product) {
+            const selectedFits = Array.from(document.querySelectorAll('[fit][selected="true"]'))
+            const money = selectedFits.length > 0 ? selectedFits.map(x => parseInt(x.getAttributeNode('fit').value)).reduce((a, b) => a + b,0) : 0
+
+            priceTop.innerText = `$${product.price + money}`
+            cartPrice.innerText = `$NT${product.price + money}`
+            tax.innerText = `${(product.price + money) * 0.05}`
+        }
+
+
+        function clearColorArea() {
+            colorArea.innerHTML = ''
+            accordionBtn.textContent = '外觀'
+
+            const removeItem = accordionBox.querySelectorAll('.accordion-item')
+            console.log(removeItem)
+            console.log(accordionBox.children)
+            // 起始長度是1，大於1就是下面的多長出來
+            if (removeItem.length > 1) {
+                for (let i = 1; i < removeItem.length; i++) {
+                    // 顏色區塊是第0，1是spec
+                    accordionBox.removeChild(accordionBox.children[1])
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
