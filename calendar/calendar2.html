@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        
+        body {
+            background-image: url("https://picsum.photos/id/321/1200/800");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            height: 100%;
+            max-height: 100%;
+            align-items: center;
+            align-content: center;
+
+        }
+        .container {
+            background-color: rgba(255, 255, 255, .6);
+            box-shadow: 0 0 10px #fff;
+            border-radius: 20px;
+        }
+
+        .date,
+        .week-day,
+        .calen li {
+            width: calc(100% / 7);
+            box-sizing: border-box;
+            border: 3px solid #000;
+
+        }
+
+        .week-day {
+            font-weight: 600;
+            font-size: 25px;
+            font-family: sans-serif;
+        }
+
+        .date {
+            height: 80px;
+            border-radius: 0;
+            text-align: left;
+        }
+
+        .date:hover {
+            border: none;
+            transform: scale(1.2)
+        }
+
+        .calen>.fadeout {
+            opacity: .3;
+        }
+
+        .calen li:nth-last-of-type(7n+7),
+        .calen li:nth-last-of-type(7n+1) {
+            background-color: rgb(235, 53, 53, .5);
+        }
+
+        .todayColor {
+            color: white;
+        }
+
+        .sunday {
+            border-radius: 20px 0 0 0;
+        }
+
+        .saturday {
+            border-radius: 0 20px 0 0;
+        }
+
+        #add-date{
+            background-color: transparent;
+            outline: none;
+            border: 5px solid #ccc;
+            border-bottom: none;
+        }
+
+
+        .calen li:nth-of-type(36) {
+            border-radius: 0 0 0 20px;
+        }
+
+        .calen li:nth-of-type(42) {
+            border-radius: 0 0 20px 0;
+        }
+        .todoArea{
+            height: 300px;
+            max-height: 300px;
+            overflow: auto;
+        }
+        .todoLi{
+            border-radius:10px
+        }
+
+        #inputText {
+            height: 100px;
+            max-height: 100px;
+            min-height: 100px;
+            width: 100%;
+            background-color:transparent;
+            border: 5px solid #ccc;
+        }
+
+        .buttonGroup button {
+            color: white;
+        }
+        @media screen and (min-width:820px){
+            body{
+                height: 100vh;
+                max-height: 100vh;
+                
+            }
+        }
+        @media screen and (min-width:992px) {
+            :root{
+            font-size: 20px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <input type="date"> -->
+        <div class="headerCalen row">
+            <button class="col-1 btn btn-primary lastMonth"><i class="fa-solid fa-angle-left"></i></button>
+            <h3 id="year-month" class="col-3 mb-0 d-flex justify-content-center align-items-center "></h3>
+            <button class="col-1 btn btn-primary nextMonth"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 col-lg-7">
+                <ul class="week row p-0 mb-0">
+                    <li class="week-day text-center py-3 sunday">日</li>
+                    <li class="week-day text-center py-3">一</li>
+                    <li class="week-day text-center py-3">二</li>
+                    <li class="week-day text-center py-3">三</li>
+                    <li class="week-day text-center py-3">四</li>
+                    <li class="week-day text-center py-3">五</li>
+                    <li class="week-day text-center py-3 saturday">六</li>
+                </ul>
+                <ul id="calen" class="calen row p-0 ">
+                </ul>
+            </div>
+            <div class="col-12 col-lg-5" id="newEventModal">
+                <h2 class="text-center fw-bold">代辦事項</h2>
+                <input type="text" id="add-date">
+                <textarea name="inputText" id="inputText" class="add-value" disabled cols="30" rows="10" placeholder="請輸入行程..."></textarea>
+                <div class="buttonGroup row justify-content-end mx-1">
+                    <button type="submit" value="submit" disabled class="btn border bg-primary col-md-3 col-lg-2" id="saveButton" onclick="addTodoItem()">加入</button>
+                    <button type="button" disabled class="btn border bg-primary col-md-3 col-lg-2" id="editButton" onclick="editTodoList()">修改</button>
+                    <button disabled class="btn border bg-primary col-md-3 col-lg-2" id="cancelButton" onclick="deleteTodoList()">刪除</button>
+                </div>
+                <div class="todoArea py-2"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/e95c98306e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // 宣告
+        let dateData
+        const lastBtn = document.querySelector('.lastMonth')
+        const nextBtn = document.querySelector('.nextMonth')
+        let day = document.querySelector('.calen li')
+        let today = new Date()
+        let currentIndex
+
+        const saveBtn = document.querySelector('#saveButton')
+        const editBtn = document.querySelector('#editButton')
+        const cancelBtn = document.querySelector('#cancelButton')
+        const addDateInput = document.querySelector('#add-date')
+        const addValueInput = document.querySelector('.add-value')
+        const editDateInput = document.querySelector('#edit-date')
+        const editValueInput = document.querySelector('#edit-value')
+        let todoArea = document.querySelector('.todoArea')
+        let addValueArea = document.querySelector('#inputText')
+
+        window.onload = function () {
+
+            init()
+            lastBtn.addEventListener('click', lastMonth)
+            nextBtn.addEventListener('click', nextMonth)
+        }
+
+        // 初始化
+        function init() {
+            dateData = new Date()
+            render()
+
+        }
+
+        function lastMonth() {
+            dateData.setMonth(dateData.getMonth() - 1)
+            render()
+        }
+
+        function nextMonth() {
+            dateData.setMonth(dateData.getMonth() + 1)
+            render()
+        }
+        // 建li
+        function render() {
+            let head = document.querySelector('#year-month')
+            head.textContent = `${dateData.toLocaleDateString('en-us', { month: 'long' })} ${dateData.getFullYear()}`
+            let calendar = document.querySelector('.calen')
+
+            let count = 0
+
+            calendar.innerText = ''
+
+            let firstDate = new Date(dateData.getFullYear(), dateData.getMonth(), 1)
+
+            // first day of this month
+            let date = new Date(dateData.getFullYear(), dateData.getMonth(), 1)
+
+            // get sunday
+            date.setDate(date.getDate() - date.getDay())
+
+            // 星期一到本月第一天
+            while (date < dateData) {
+                renderDate(date, calendar)
+                date.setDate(date.getDate() + 1)
+                count++
+
+            }
+            //本月 
+            while (date.getMonth() == dateData.getMonth()) {
+                renderDate(date, calendar)
+                date.setDate(date.getDate() + 1)
+                count++
+            }
+            // 下個月
+            while (count < 42) {
+                renderDate(date, calendar)
+                date.setDate(date.getDate() + 1)
+                count++
+            }
+        }
+        // 把日期加進去
+        function renderDate(date, calendar) {
+            let li = document.createElement('li')
+            li.classList.add('date', 'btn',)
+            let p = document.createElement('p')
+            p.classList.add('d-block', 'day')
+            p.innerHTML = `${date.getDate()}`
+
+            //本月以外的都給不透明度
+            if(date.getMonth() !== dateData.getMonth()){
+                li.classList.add('fadeout')
+            }
+
+            // 強調當天
+            if (today.getDate() == date.getDate() && today.getFullYear() == date.getFullYear() && today.getMonth() == date.getMonth()) {
+                li.classList.add('todayColor')
+            } else {
+                li.classList.remove('todayColor')
+            }
+
+            
+            li.onclick = function () {
+                todoArea.textContent = ''
+
+                addValueArea.removeAttribute('disabled')
+                saveBtn.removeAttribute('disabled')
+                addDateInput.value = `${dateData.getFullYear()}-${dateData.getMonth() + 1}-${li.children[0].childNodes[0].data}`
+
+                if(addValueArea.value != null){
+                    cancelBtn.removeAttribute('disabled')
+                }
+                showTodoList()
+            }
+            // todoArea
+            li.appendChild(p)
+            calendar.appendChild(li)
+
+        }
+
+        // 顯示代辦事項
+        function showTodoList() {
+            if (localStorage.getItem(addDateInput.value) != null) {
+                let todoUl = document.createElement('ul')
+                todoUl.classList.add('p-0')
+                let todoList = JSON.parse(localStorage.getItem(addDateInput.value))
+                todoList.forEach((item, index) => {
+                    let todoLi = document.createElement('li')
+                    todoLi.classList.add('w-100', 'bg-white','mt-2','todoLi')
+                    todoLi.innerText = item.title
+
+                    todoLi.onclick = function (event) {
+                        addDateInput.removeAttribute('disabled')
+                        editBtn.removeAttribute('disabled')
+                        addValueArea.value = todoLi.textContent
+                        currentIndex = index
+                        todoLi.textContent = addValueArea.value
+                        event.stopPropagation()
+                    }
+
+                    todoUl.appendChild(todoLi)
+                    
+                })
+                console.log(todoUl)
+                todoArea.appendChild(todoUl)
+
+            }
+        }
+        // 加入代辦事項
+        function addTodoItem() {
+            todoArea.textContent = ''
+            let date = addDateInput.value
+            let todoItem = addValueInput.value
+
+            let todoObj = {
+                title: todoItem
+            }
+
+            let todoList = []
+            if (localStorage.getItem(date) == null) {
+                todoList.push(todoObj)
+            } else {
+                todoList = JSON.parse(localStorage.getItem(date))
+                todoList.push(todoObj)
+            }
+            addValueInput.value = ''
+            localStorage.setItem(date, JSON.stringify(todoList))
+
+
+            showTodoList()
+            render()
+        }
+        // 編輯事項
+        function editTodoList() {
+            todoArea.textContent = ''
+            let date = addDateInput.value
+            let todoItem = addValueArea.value
+
+            todoList = JSON.parse(localStorage.getItem(date))
+            todoList[currentIndex] = {
+                title: todoItem
+            }
+            localStorage.setItem(date, JSON.stringify(todoList))
+            addValueInput.value = ''
+            editBtn.setAttribute('disabled','disabled')
+            showTodoList()
+            render()
+        }
+        // 刪除事項
+        function deleteTodoList(){
+            todoArea.textContent = ''
+            let date = addDateInput.value
+            let todoList = JSON.parse(localStorage.getItem(date))
+
+            todoList.splice(currentIndex,1)
+
+            localStorage.setItem(date, JSON.stringify(todoList))
+            addValueInput.value = ''
+            showTodoList()
+            render()
+        }
+
+    </script>
+</body>
+
+</html>
