@@ -54,7 +54,6 @@
             background: url(./R.png);
             background-size: cover;
             animation: snowfall 20s linear infinite;
-            /* height: 100vh;   */
             height: 100vh;
             width: 100vw;
             background-repeat: no-repeat;
@@ -253,6 +252,7 @@
                     citySelect.addEventListener('change', function () {
                         console.log(this.value)
 
+                        // select 不為''才動
                         if(this.value != '') {
                             let city = areaData.find(x => x.City == this.value)
                             console.log(city)
