@@ -22,31 +22,48 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
     <style>
-        body{
+        /* :root {
+    --leaflet-tile-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+    .leaflet-tile {
+        filter: var(--leaflet-tile-filter, none);
+    }
+
+    .leaflet-container {
+        background: #303030;
+    }
+} */
+        body {
             background-image: url(./bgc.jpg);
-            background-size:cover;
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             height: 100vh;
         }
+
         #map {
             height: 100%;
         }
-        .container{
-            background-color: rgba(255,255,255,.2);
-            box-shadow:0,0,10px;
+
+        .container {
+            background-color: rgba(255, 255, 255, .2);
+            box-shadow: 0, 0, 10px;
             z-Index: 10;
             padding-left: 50px;
             padding-right: 50px;
             height: 100vh;
         }
-        .snow-bg{
+
+        .snow-bg {
             height: 100vh;
             position: absolute;
-            z-index:-1;
+            z-index: -1;
         }
-        .snow-bg::before{
-            z-index:-1;
+
+        .snow-bg::before {
+            z-index: -1;
             content: '';
             position: absolute;
             top: 0;
@@ -58,26 +75,37 @@
             width: 100vw;
             background-repeat: no-repeat;
         }
-       @keyframes snowfall{
-            0%{background-position:0,0;},
-            100%{background-position:0,271px;}
-       }
+
+        @keyframes snowfall {
+            0% {
+                background-position: 0, 0;
+            }
+
+            ,
+            100% {
+                background-position: 0, 271px;
+            }
+        }
+
         .container>.row {
             height: 90vh;
         }
 
-        label{
+        label {
             font-size: 23px;
         }
-        .area-info{
+
+        .area-info {
             text-align: left;
             font-size: 25px;
             color: white;
         }
-        .areaRow{
+
+        .areaRow {
             position: relative;
         }
-        .declare{
+
+        .declare {
             position: absolute;
             bottom: 0;
             right: 0;
@@ -89,7 +117,7 @@
 <body>
     <div class="snow-bg"></div>
     <div class="container text-center">
-        <h1 class="text-white fw-bolder" >110年全國各地區人口統計</h1>
+        <h1 class="text-white fw-bolder">110年全國各地區人口統計</h1>
         <div class="row">
             <div class="col-6">
                 <div id="map"></div>
@@ -111,8 +139,8 @@
                     </div>
                 </div>
                 <div class="row mt-2 ">
-                    <button class="col-3 btn btn-dark mx-2 change_theme">深色模式</button>
-                    <button class="col-3 btn btn-light mx-2 light_theme">淺色模式</button>
+                    <button class="col-3 btn btn-dark mx-2 change_theme">道路模式</button>
+                    <button class="col-3 btn btn-light mx-2 light_theme">一般模式</button>
                 </div>
                 <div class="row mt-2 h-50 border border-2 border-dark areaRow">
                     <div class="area-info ">
@@ -125,7 +153,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
 
@@ -236,7 +264,7 @@
                     })
 
                     console.log(newArray);
-                    
+
                     ['請選擇縣市'].concat([...new Set(newArray.map(x => x.city))]).forEach(x => {
                         const opt = document.createElement('option')
                         opt.innerText = x
@@ -244,8 +272,8 @@
 
                         citySelect.appendChild(opt)
                     })
-                    
-                    
+
+
 
                     console.log(citySelect.value)
                     districtSelect = document.querySelector('#district')
@@ -253,10 +281,10 @@
                         console.log(this.value)
 
                         // select 不為''才動
-                        if(this.value != '') {
+                        if (this.value != '') {
                             let city = areaData.find(x => x.City == this.value)
                             console.log(city)
-                            map.setView([city.Lat,city.Lng],12)
+                            map.setView([city.Lat, city.Lng], 12)
                         }
                         districtSelect.innerHTML = ''
 
@@ -279,7 +307,7 @@
                                 opt.innerText = x.district
                                 districtSelect.appendChild(opt)
 
-                                
+
                             })
                         } else {
 
@@ -288,21 +316,27 @@
                         }
                     })
 
-                    districtSelect.addEventListener('change',function(){
-                        if(this.value != ''){
+                    districtSelect.addEventListener('change', function () {
+                        if (this.value != '') {
                             let district = areaData.find(x => x.District == this.value && x.City
-                             == citySelect.value)
-                            map.setView([district.Lat,district.Lng],15)
+                                == citySelect.value)
+                            map.setView([district.Lat, district.Lng], 15)
                         }
                         showInfo()
                     })
                     // 深色主題
-                    themeBtn.onclick = function(){
-                        L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png').addTo(map);
-                        
+                    themeBtn.onclick = function () {
+                        L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                            className: 'map-tiles',
+                        }).addTo(map);
+
+
+
+
                     }
                     // 淺色主題
-                    lightBtn.onclick = function(){
+                    lightBtn.onclick = function () {
                         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map)
                     }
                     setMarker()
@@ -313,9 +347,9 @@
                 })
 
         }
-        
-        function showInfo(){
-            let info= areaPeopleData.find(x => x.district ==  districtSelect.value && x.city == citySelect.value)
+
+        function showInfo() {
+            let info = areaPeopleData.find(x => x.district == districtSelect.value && x.city == citySelect.value)
             console.log(info)
 
             let district_info = document.querySelector('.district-info')
@@ -329,13 +363,13 @@
             popula_denisty.innerText = `人口密度: ${info.population_density}`
         }
 
-        function setMarker(){
-            newArray.forEach((x,index) => {
+        function setMarker() {
+            newArray.forEach((x, index) => {
                 let data = x
 
-                data.districts.forEach(x=>{
-                    let marker = L.marker([x.Lat,x.Lng])
-                    
+                data.districts.forEach(x => {
+                    let marker = L.marker([x.Lat, x.Lng])
+
                     // popUp資訊
                     marker.bindPopup(
                         `<h5>${x.city} ${x.district}</h5>
@@ -351,7 +385,7 @@
                 console.log(data.districts.Lat)
 
                 map.addLayer(markers)
-                
+
             })
         }
 
